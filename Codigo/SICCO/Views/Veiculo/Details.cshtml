@@ -1,0 +1,82 @@
+﻿@model SICCO.Database.tb_veiculo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_veiculo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.placa)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.placa)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.chassi)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.chassi)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.idConcessionaria)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.idConcessionaria)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.lote)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.lote)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_bem.id)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_bem.id)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_cor.tipoCor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_cor.tipoCor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_empresa.nomeFantasia)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_empresa.nomeFantasia)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_modelo.tipoModelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_modelo.tipoModelo)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

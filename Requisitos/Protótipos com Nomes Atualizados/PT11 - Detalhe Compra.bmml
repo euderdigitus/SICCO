@@ -1,0 +1,246 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1236" measuredH="942" mockupW="1152" mockupH="899">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="84" y="43" w="1152" h="629" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TabBar" x="84" y="116" w="1152" h="826" measuredW="387" measuredH="100" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Inicio%2C%20Cadastro%2C%20Negocia%E7%F5es%2C%20Relat%F3rio%2C%20Usu%E1rio%2C%20%20Sair</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Label" x="220" y="451" w="158" h="-1" measuredW="151" measuredH="21" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Modelo%3A%20Corsa%20Classic%201.8</text>
+      </controlProperties>
+    </control>
+    <control controlID="3" controlTypeID="com.balsamiq.mockups::Label" x="220" y="480" w="65" h="-1" measuredW="63" measuredH="21" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Marca%3A%20GM</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Label" x="220" y="510" w="123" h="-1" measuredW="122" measuredH="21" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Cor%3A%20Prata%20%28Met%E1lico%29</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::Label" x="220" y="540" w="-1" h="-1" measuredW="98" measuredH="21" zOrder="5" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Categoria%3A%20Carro</text>
+      </controlProperties>
+    </control>
+    <control controlID="6" controlTypeID="com.balsamiq.mockups::Label" x="220" y="567" w="-1" h="-1" measuredW="103" measuredH="21" zOrder="6" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Combust%EDvel%3A%20Flex</text>
+      </controlProperties>
+    </control>
+    <control controlID="7" controlTypeID="com.balsamiq.mockups::Label" x="555" y="510" w="-1" h="-1" measuredW="173" measuredH="21" zOrder="7" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Valor%20Sugerido%3A%20R%2420.000%2C00</text>
+      </controlProperties>
+    </control>
+    <control controlID="8" controlTypeID="com.balsamiq.mockups::Label" x="555" y="451" w="-1" h="-1" measuredW="34" measuredH="21" zOrder="8" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Placa</text>
+      </controlProperties>
+    </control>
+    <control controlID="10" controlTypeID="com.balsamiq.mockups::Label" x="555" y="479" w="-1" h="-1" measuredW="160" measuredH="21" zOrder="9" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ano%20-%20Modelo%3A%20%202014%20-%202014</text>
+      </controlProperties>
+    </control>
+    <control controlID="11" controlTypeID="com.balsamiq.mockups::TextInput" x="666" y="539" w="155" h="-1" measuredW="94" measuredH="27" zOrder="10" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>R%24%2019.500%2C00</text>
+      </controlProperties>
+    </control>
+    <control controlID="12" controlTypeID="com.balsamiq.mockups::Label" x="555" y="542" w="-1" h="-1" measuredW="96" measuredH="21" zOrder="11" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Valor%20Negociado</text>
+      </controlProperties>
+    </control>
+    <control controlID="13" controlTypeID="com.balsamiq.mockups::TextArea" x="967" y="465" w="-1" h="-1" measuredW="200" measuredH="140" zOrder="12" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Sem%20Observa%E7%F5es</text>
+      </controlProperties>
+    </control>
+    <control controlID="14" controlTypeID="com.balsamiq.mockups::Label" x="876" y="451" w="-1" h="-1" measuredW="72" measuredH="21" zOrder="13" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Observa%E7%E3o</text>
+      </controlProperties>
+    </control>
+    <control controlID="15" controlTypeID="com.balsamiq.mockups::SubTitle" x="139" y="202" w="-1" h="-1" measuredW="223" measuredH="27" zOrder="14" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Detalhes%20da%20Compra</text>
+      </controlProperties>
+    </control>
+    <control controlID="16" controlTypeID="com.balsamiq.mockups::TextInput" x="604" y="448" w="155" h="-1" measuredW="76" measuredH="27" zOrder="15" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>HZN-5529</text>
+      </controlProperties>
+    </control>
+    <control controlID="17" controlTypeID="com.balsamiq.mockups::FieldSet" x="119" y="612" w="910" h="190" measuredW="200" measuredH="170" zOrder="16" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Detalhes%20de%20Estado%20do%20Ve%EDculo</text>
+      </controlProperties>
+    </control>
+    <control controlID="18" controlTypeID="com.balsamiq.mockups::FieldSet" x="158" y="631" w="189" h="152" measuredW="200" measuredH="170" zOrder="17" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Chaparia</text>
+      </controlProperties>
+    </control>
+    <control controlID="19" controlTypeID="com.balsamiq.mockups::FieldSet" x="378" y="631" w="189" h="152" measuredW="200" measuredH="170" zOrder="18" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Pintura</text>
+      </controlProperties>
+    </control>
+    <control controlID="20" controlTypeID="com.balsamiq.mockups::CheckBox" x="176" y="656" w="-1" h="-1" measuredW="80" measuredH="22" zOrder="19" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>selected</state>
+        <text>Excelente</text>
+      </controlProperties>
+    </control>
+    <control controlID="21" controlTypeID="com.balsamiq.mockups::CheckBox" x="176" y="678" w="-1" h="-1" measuredW="46" measuredH="22" zOrder="20" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Bom</text>
+      </controlProperties>
+    </control>
+    <control controlID="22" controlTypeID="com.balsamiq.mockups::CheckBox" x="176" y="700" w="-1" h="-1" measuredW="75" measuredH="22" zOrder="21" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Razo%E1vel</text>
+      </controlProperties>
+    </control>
+    <control controlID="24" controlTypeID="com.balsamiq.mockups::FieldSet" x="598" y="631" w="189" h="152" measuredW="200" measuredH="170" zOrder="22" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>El%E9trica</text>
+      </controlProperties>
+    </control>
+    <control controlID="25" controlTypeID="com.balsamiq.mockups::FieldSet" x="815" y="631" w="189" h="152" measuredW="200" measuredH="170" zOrder="23" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Mec%E2nica</text>
+      </controlProperties>
+    </control>
+    <control controlID="26" controlTypeID="com.balsamiq.mockups::CheckBox" x="176" y="722" w="-1" h="-1" measuredW="50" measuredH="22" zOrder="24" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ruim</text>
+      </controlProperties>
+    </control>
+    <control controlID="27" controlTypeID="com.balsamiq.mockups::CheckBox" x="176" y="744" w="-1" h="-1" measuredW="71" measuredH="22" zOrder="25" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>P%E9ssimo</text>
+      </controlProperties>
+    </control>
+    <control controlID="28" controlTypeID="com.balsamiq.mockups::CheckBox" x="398" y="656" w="-1" h="-1" measuredW="80" measuredH="22" zOrder="26" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Excelente</text>
+      </controlProperties>
+    </control>
+    <control controlID="29" controlTypeID="com.balsamiq.mockups::CheckBox" x="398" y="678" w="-1" h="-1" measuredW="46" measuredH="22" zOrder="27" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>selected</state>
+        <text>Bom</text>
+      </controlProperties>
+    </control>
+    <control controlID="30" controlTypeID="com.balsamiq.mockups::CheckBox" x="398" y="700" w="-1" h="-1" measuredW="75" measuredH="22" zOrder="28" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Razo%E1vel</text>
+      </controlProperties>
+    </control>
+    <control controlID="31" controlTypeID="com.balsamiq.mockups::CheckBox" x="398" y="722" w="-1" h="-1" measuredW="50" measuredH="22" zOrder="29" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ruim</text>
+      </controlProperties>
+    </control>
+    <control controlID="32" controlTypeID="com.balsamiq.mockups::CheckBox" x="398" y="744" w="-1" h="-1" measuredW="71" measuredH="22" zOrder="30" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>P%E9ssimo</text>
+      </controlProperties>
+    </control>
+    <control controlID="33" controlTypeID="com.balsamiq.mockups::CheckBox" x="613" y="656" w="-1" h="-1" measuredW="80" measuredH="22" zOrder="31" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>selected</state>
+        <text>Excelente</text>
+      </controlProperties>
+    </control>
+    <control controlID="34" controlTypeID="com.balsamiq.mockups::CheckBox" x="613" y="678" w="-1" h="-1" measuredW="46" measuredH="22" zOrder="32" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Bom</text>
+      </controlProperties>
+    </control>
+    <control controlID="35" controlTypeID="com.balsamiq.mockups::CheckBox" x="613" y="700" w="-1" h="-1" measuredW="75" measuredH="22" zOrder="33" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Razo%E1vel</text>
+      </controlProperties>
+    </control>
+    <control controlID="36" controlTypeID="com.balsamiq.mockups::CheckBox" x="613" y="722" w="-1" h="-1" measuredW="50" measuredH="22" zOrder="34" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ruim</text>
+      </controlProperties>
+    </control>
+    <control controlID="37" controlTypeID="com.balsamiq.mockups::CheckBox" x="613" y="744" w="-1" h="-1" measuredW="71" measuredH="22" zOrder="35" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>P%E9ssimo</text>
+      </controlProperties>
+    </control>
+    <control controlID="38" controlTypeID="com.balsamiq.mockups::CheckBox" x="830" y="656" w="-1" h="-1" measuredW="80" measuredH="22" zOrder="36" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Excelente</text>
+      </controlProperties>
+    </control>
+    <control controlID="39" controlTypeID="com.balsamiq.mockups::CheckBox" x="830" y="678" w="-1" h="-1" measuredW="46" measuredH="22" zOrder="37" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Bom</text>
+      </controlProperties>
+    </control>
+    <control controlID="40" controlTypeID="com.balsamiq.mockups::CheckBox" x="830" y="700" w="-1" h="-1" measuredW="75" measuredH="22" zOrder="38" locked="false" isInGroup="-1">
+      <controlProperties>
+        <state>selected</state>
+        <text>Razo%E1vel</text>
+      </controlProperties>
+    </control>
+    <control controlID="41" controlTypeID="com.balsamiq.mockups::CheckBox" x="830" y="722" w="-1" h="-1" measuredW="50" measuredH="22" zOrder="39" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Ruim</text>
+      </controlProperties>
+    </control>
+    <control controlID="42" controlTypeID="com.balsamiq.mockups::CheckBox" x="830" y="744" w="-1" h="-1" measuredW="71" measuredH="22" zOrder="40" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>P%E9ssimo</text>
+      </controlProperties>
+    </control>
+    <control controlID="44" controlTypeID="com.balsamiq.mockups::Button" x="431" y="884" w="-1" h="-1" measuredW="63" measuredH="27" zOrder="41" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Alterar</text>
+      </controlProperties>
+    </control>
+    <control controlID="70" controlTypeID="com.balsamiq.mockups::Button" x="505" y="882" w="-1" h="-1" measuredW="62" measuredH="27" zOrder="42" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Excluir</text>
+      </controlProperties>
+    </control>
+    <control controlID="71" controlTypeID="com.balsamiq.mockups::SearchBox" x="299" y="268" w="175" h="-1" measuredW="120" measuredH="25" zOrder="43" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Euder</text>
+      </controlProperties>
+    </control>
+    <control controlID="72" controlTypeID="com.balsamiq.mockups::Label" x="119" y="270" w="-1" h="-1" measuredW="158" measuredH="21" zOrder="44" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Nome%20do%20Cliente%20Vendedor</text>
+      </controlProperties>
+    </control>
+    <control controlID="73" controlTypeID="com.balsamiq.mockups::DataGrid" x="106" y="309" w="1095" h="82" measuredW="1186" measuredH="52" zOrder="45" locked="false" isInGroup="-1">
+      <controlProperties>
+        <hLines>true</hLines>
+        <rowHeight>31</rowHeight>
+        <text>Nome%20/%20Raz%E3o%20Social%2C%20Cpf%20/%20Cnpj%2C%20Rg%2C%20E-mail%2C%20Data%20de%20Nascimento%2C%20Endere%E7o%2C%20Estado%2C%20Cep%2C%20Cidade%2C%20Sexo%2C%20Telefone%2C%20Celuluar%2C%20Negociar%20%0AEuder%20Costa%2C%20050.558.165-54%2C%203420110-6%2C%20euderdigitus@gmail.com%2C%2029/06/1993%2C%20Av%3A%20L%20-%20938%2C%20SE%2C%2049160000%2CAparecida%2C%20M%2C%20793254-1433%2C%20799828-4251%2C%28*%29</text>
+        <vLines>true</vLines>
+      </controlProperties>
+    </control>
+    <control controlID="74" controlTypeID="com.balsamiq.mockups::Button" x="579" y="882" w="-1" h="-1" measuredW="57" measuredH="27" zOrder="46" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Voltar</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

@@ -1,0 +1,66 @@
+﻿@model SICCO.Database.tb_modelo
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>tb_modelo</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.categoiaModelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoiaModelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tipoModelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tipoModelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descricao)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descricao)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.anoModelo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.anoModelo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_marca.marca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_marca.marca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.tb_tipocombustivel.tipoCombustivel)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tb_tipocombustivel.tipoCombustivel)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

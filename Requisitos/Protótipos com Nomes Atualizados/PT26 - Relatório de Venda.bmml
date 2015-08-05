@@ -1,0 +1,31 @@
+<mockup version="1.0" skin="sketch" fontFace="Balsamiq Sans" measuredW="1252" measuredH="750" mockupW="1157" mockupH="737">
+  <controls>
+    <control controlID="0" controlTypeID="com.balsamiq.mockups::BrowserWindow" x="95" y="13" w="1152" h="737" measuredW="450" measuredH="400" zOrder="0" locked="false" isInGroup="-1">
+      <controlProperties>
+        <borderStyle>square</borderStyle>
+        <text>A%20Web%20Page%0Ahttp%3A//</text>
+        <verticalScrollbar>false</verticalScrollbar>
+      </controlProperties>
+    </control>
+    <control controlID="1" controlTypeID="com.balsamiq.mockups::TabBar" x="100" y="82" w="1152" h="629" measuredW="387" measuredH="100" zOrder="1" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Inicio%2C%20Cadastro%2C%20Negocia%E7%F5es%2C%20Relat%F3rio%2C%20Usu%E1rio%2C%20%20Sair</text>
+      </controlProperties>
+    </control>
+    <control controlID="2" controlTypeID="com.balsamiq.mockups::Menu" x="319" y="111" w="-1" h="-1" measuredW="150" measuredH="52" zOrder="2" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Compra%0Ax%20Venda</text>
+      </controlProperties>
+    </control>
+    <control controlID="4" controlTypeID="com.balsamiq.mockups::Title" x="469" y="241" w="-1" h="-1" measuredW="345" measuredH="43" zOrder="3" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>Relat%F3rio%20de%20Venda</text>
+      </controlProperties>
+    </control>
+    <control controlID="5" controlTypeID="com.balsamiq.mockups::DataGrid" x="126" y="330" w="1090" h="310" measuredW="1213" measuredH="51" zOrder="4" locked="false" isInGroup="-1">
+      <controlProperties>
+        <text>C%F3digo%2C%20Modelo%2C%20Marca%2C%20Cor%2CAno%20-%20Modelo%2CPlaca%2CCliente%2C%20Cpf/Cnpj%2CValor%20do%20Ve%EDculo%2C%20Valor%20Negociado%2CData%20da%20Venda%2C%20Vendedor%2C%20Negocia%E7%E3o%0A1%2C%20Corsa%20Classic%201.8%2C%20GM%2C%20Prata%28Met%E1lica%29%2C%202014-2014%2C%20HZN-7558%2C%20Guilherme%20Viturino%2C%20050.558.165-54%2C%20R%2422.000%2C%20R%2420.000%20%2C10/01/2015%2C%20Brenno%20Santana%2C%20Conclu%EDda</text>
+      </controlProperties>
+    </control>
+  </controls>
+</mockup>

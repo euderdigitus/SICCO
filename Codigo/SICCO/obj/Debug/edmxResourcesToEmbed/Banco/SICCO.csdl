@@ -1,0 +1,557 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="siccoModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tb_bem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="valor" Type="Single" />
+    <Property Name="dataCompra" Type="DateTime" Nullable="false" />
+    <Property Name="dataVenda" Type="DateTime" />
+    <Property Name="idTipoBem" Type="Int32" Nullable="false" />
+    <Property Name="idStatus" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_status" Relationship="Self.fk_TB_Bem_TB_Status1" FromRole="tb_bem" ToRole="tb_status" />
+    <NavigationProperty Name="tb_tipobem" Relationship="Self.fk_TB_Bem_TB_TipoBem1" FromRole="tb_bem" ToRole="tb_tipobem" />
+    <NavigationProperty Name="tb_custo" Relationship="Self.fk_tb_custos_TB_Bem1" FromRole="tb_bem" ToRole="tb_custo" />
+    <NavigationProperty Name="tb_negociacao" Relationship="Self.fk_Tb_Negociacao_TB_Bem1" FromRole="tb_bem" ToRole="tb_negociacao" />
+    <NavigationProperty Name="tb_veiculo" Relationship="Self.fk_tb_veiculo_TB_Bem1" FromRole="tb_bem" ToRole="tb_veiculo" />
+  </EntityType>
+  <EntityType Name="tb_cor">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoCor" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cor" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tb_veiculo" Relationship="Self.fk_tb_veiculo_tb_Cor1" FromRole="tb_cor" ToRole="tb_veiculo" />
+  </EntityType>
+  <EntityType Name="tb_custo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="valor" Type="Single" Nullable="false" />
+    <Property Name="idPessoa" Type="Int32" Nullable="false" />
+    <Property Name="idTipoCusto" Type="Int32" Nullable="false" />
+    <Property Name="idBem" Type="Int32" Nullable="false" />
+    <Property Name="idEmpresa" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_bem" Relationship="Self.fk_tb_custos_TB_Bem1" FromRole="tb_custo" ToRole="tb_bem" />
+    <NavigationProperty Name="tb_empresa" Relationship="Self.fk_Tb_Custo_TB_Empresa1" FromRole="tb_custo" ToRole="tb_empresa" />
+    <NavigationProperty Name="tb_tipocusto" Relationship="Self.fk_tb_custos_tb_tipoCusto1" FromRole="tb_custo" ToRole="tb_tipocusto" />
+  </EntityType>
+  <EntityType Name="tb_empresa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nomeFantasia" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_custo" Relationship="Self.fk_Tb_Custo_TB_Empresa1" FromRole="tb_empresa" ToRole="tb_custo" />
+    <NavigationProperty Name="tb_pessoa_has_tb_empresa" Relationship="Self.fk_TB_Pessoa_has_TB_Empresa_TB_Empresa1" FromRole="tb_empresa" ToRole="tb_pessoa_has_tb_empresa" />
+    <NavigationProperty Name="tb_pessoa" Relationship="Self.fk_TB_Pessoa_TB_Empresa1" FromRole="tb_empresa" ToRole="tb_pessoa" />
+    <NavigationProperty Name="tb_usuario" Relationship="Self.fk_TB_Usuario_TB_Empresa1" FromRole="tb_empresa" ToRole="tb_usuario" />
+    <NavigationProperty Name="tb_veiculo" Relationship="Self.fk_TB_Veiculo_TB_Empresa1" FromRole="tb_empresa" ToRole="tb_veiculo" />
+  </EntityType>
+  <EntityType Name="tb_formapagamento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="formaPagamento" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_pagamento" Relationship="Self.fk_TB_Pagamento_TB_FormaPagamento1" FromRole="tb_formapagamento" ToRole="tb_pagamento" />
+  </EntityType>
+  <EntityType Name="tb_marca">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="marca" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tb_modelo" Relationship="Self.fk_tb_modelo_tb_Marca1" FromRole="tb_marca" ToRole="tb_modelo" />
+  </EntityType>
+  <EntityType Name="tb_modelo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categoiaModelo" Type="Int32" Nullable="false" />
+    <Property Name="tipoModelo" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="combutivel" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="descricao" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="anoModelo" Type="String" MaxLength="9" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idMarca" Type="Int32" Nullable="false" />
+    <Property Name="idTipoCompustivel" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_marca" Relationship="Self.fk_tb_modelo_tb_Marca1" FromRole="tb_modelo" ToRole="tb_marca" />
+    <NavigationProperty Name="tb_tipocombustivel" Relationship="Self.fk_TB_Modelo_TB_TipoCombustivel1" FromRole="tb_modelo" ToRole="tb_tipocombustivel" />
+    <NavigationProperty Name="tb_veiculo" Relationship="Self.fk_tb_veiculo_tb_modelo1" FromRole="tb_modelo" ToRole="tb_veiculo" />
+  </EntityType>
+  <EntityType Name="tb_negociacao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="valor" Type="Double" Nullable="false" />
+    <Property Name="status" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="dataInicio" Type="DateTime" />
+    <Property Name="dataFim" Type="DateTime" />
+    <Property Name="validadeProposta" Type="DateTime" />
+    <Property Name="valorPropostoVendedor" Type="Single" />
+    <Property Name="valorPropostoCliente" Type="Single" />
+    <Property Name="observacao" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="idTipoNegociacao" Type="Int32" Nullable="false" />
+    <Property Name="idBem" Type="Int32" Nullable="false" />
+    <Property Name="idPessoaCliente" Type="Int32" Nullable="false" />
+    <Property Name="idPessoaVendedor" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_bem" Relationship="Self.fk_Tb_Negociacao_TB_Bem1" FromRole="tb_negociacao" ToRole="tb_bem" />
+    <NavigationProperty Name="tb_tiponegociacao" Relationship="Self.fk_tb_negociacao_TB_TipoNegociacao1" FromRole="tb_negociacao" ToRole="tb_tiponegociacao" />
+    <NavigationProperty Name="tb_pagamento" Relationship="Self.fk_TB_Pagamentos_tb_negociacao1" FromRole="tb_negociacao" ToRole="tb_pagamento" />
+  </EntityType>
+  <EntityType Name="tb_pagamento">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idNegociacao" Type="Int32" Nullable="false" />
+    <Property Name="idFormaPagamento" Type="Int32" Nullable="false" />
+    <Property Name="valor" Type="Single" />
+    <Property Name="valorPago" Type="Single" Nullable="false" />
+    <Property Name="juro" Type="Single" />
+    <Property Name="descricao" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="dataPagamento" Type="DateTime" />
+    <NavigationProperty Name="tb_formapagamento" Relationship="Self.fk_TB_Pagamento_TB_FormaPagamento1" FromRole="tb_pagamento" ToRole="tb_formapagamento" />
+    <NavigationProperty Name="tb_negociacao" Relationship="Self.fk_TB_Pagamentos_tb_negociacao1" FromRole="tb_pagamento" ToRole="tb_negociacao" />
+  </EntityType>
+  <EntityType Name="tb_pessoa">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="idEmpresa" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nome" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="sobreNome" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cpfCnpj" Type="String" MaxLength="14" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="rg" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="email" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <Property Name="cidade" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="estado" Type="String" MaxLength="25" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="cep" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="fone" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="celular" Type="String" MaxLength="12" FixedLength="false" Unicode="false" />
+    <Property Name="sexo" Type="String" MaxLength="1" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="nascimento" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="endereco" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idEmpresa" Type="Int32" Nullable="false" />
+    <Property Name="idTipoPessoa" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_empresa" Relationship="Self.fk_TB_Pessoa_TB_Empresa1" FromRole="tb_pessoa" ToRole="tb_empresa" />
+    <NavigationProperty Name="tb_tipopessoa" Relationship="Self.fk_TB_Pessoa_TB_TipoUsuario1" FromRole="tb_pessoa" ToRole="tb_tipopessoa" />
+  </EntityType>
+  <EntityType Name="tb_pessoa_has_tb_empresa">
+    <Key>
+      <PropertyRef Name="idPessoa" />
+      <PropertyRef Name="idEmpresa" />
+    </Key>
+    <Property Name="idPessoa" Type="Int32" Nullable="false" />
+    <Property Name="idEmpresa" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_empresa" Relationship="Self.fk_TB_Pessoa_has_TB_Empresa_TB_Empresa1" FromRole="tb_pessoa_has_tb_empresa" ToRole="tb_empresa" />
+  </EntityType>
+  <EntityType Name="tb_status">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="status" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tb_bem" Relationship="Self.fk_TB_Bem_TB_Status1" FromRole="tb_status" ToRole="tb_bem" />
+  </EntityType>
+  <EntityType Name="tb_tipobem">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoBem" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tb_bem" Relationship="Self.fk_TB_Bem_TB_TipoBem1" FromRole="tb_tipobem" ToRole="tb_bem" />
+  </EntityType>
+  <EntityType Name="tb_tipocombustivel">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoCombustivel" Type="String" MaxLength="45" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_modelo" Relationship="Self.fk_TB_Modelo_TB_TipoCombustivel1" FromRole="tb_tipocombustivel" ToRole="tb_modelo" />
+  </EntityType>
+  <EntityType Name="tb_tipocusto">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoCusto" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tb_custo" Relationship="Self.fk_tb_custos_tb_tipoCusto1" FromRole="tb_tipocusto" ToRole="tb_custo" />
+  </EntityType>
+  <EntityType Name="tb_tiponegociacao">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="tipoNegociacao" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="tb_negociacao" Relationship="Self.fk_tb_negociacao_TB_TipoNegociacao1" FromRole="tb_tiponegociacao" ToRole="tb_negociacao" />
+  </EntityType>
+  <EntityType Name="tb_tipopessoa">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="tipoPessoa" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tb_pessoa" Relationship="Self.fk_TB_Pessoa_TB_TipoUsuario1" FromRole="tb_tipopessoa" ToRole="tb_pessoa" />
+  </EntityType>
+  <EntityType Name="tb_usuario">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="login" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="senha" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TB_Pessoa_id" Type="Int32" Nullable="false" />
+    <Property Name="TB_Empresa_id" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="tb_empresa" Relationship="Self.fk_TB_Usuario_TB_Empresa1" FromRole="tb_usuario" ToRole="tb_empresa" />
+  </EntityType>
+  <EntityType Name="tb_veiculo">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="placa" Type="String" MaxLength="7" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="chassi" Type="String" MaxLength="45" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="idConcessionaria" Type="Int32" Nullable="false" />
+    <Property Name="idModelo" Type="Int32" Nullable="false" />
+    <Property Name="idCor" Type="Int32" Nullable="false" />
+    <Property Name="idBem" Type="Int32" Nullable="false" />
+    <Property Name="idEmpresa" Type="Int32" Nullable="false" />
+    <Property Name="lote" Type="Int32" />
+    <NavigationProperty Name="tb_bem" Relationship="Self.fk_tb_veiculo_TB_Bem1" FromRole="tb_veiculo" ToRole="tb_bem" />
+    <NavigationProperty Name="tb_cor" Relationship="Self.fk_tb_veiculo_tb_Cor1" FromRole="tb_veiculo" ToRole="tb_cor" />
+    <NavigationProperty Name="tb_empresa" Relationship="Self.fk_TB_Veiculo_TB_Empresa1" FromRole="tb_veiculo" ToRole="tb_empresa" />
+    <NavigationProperty Name="tb_modelo" Relationship="Self.fk_tb_veiculo_tb_modelo1" FromRole="tb_veiculo" ToRole="tb_modelo" />
+  </EntityType>
+  <Association Name="fk_TB_Bem_TB_Status1">
+    <End Role="tb_status" Type="Self.tb_status" Multiplicity="1" />
+    <End Role="tb_bem" Type="Self.tb_bem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_status">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_bem">
+        <PropertyRef Name="idStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_Bem_TB_TipoBem1">
+    <End Role="tb_tipobem" Type="Self.tb_tipobem" Multiplicity="1" />
+    <End Role="tb_bem" Type="Self.tb_bem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tipobem">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_bem">
+        <PropertyRef Name="idTipoBem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_custos_TB_Bem1">
+    <End Role="tb_bem" Type="Self.tb_bem" Multiplicity="1" />
+    <End Role="tb_custo" Type="Self.tb_custo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_bem">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_custo">
+        <PropertyRef Name="idBem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tb_Negociacao_TB_Bem1">
+    <End Role="tb_bem" Type="Self.tb_bem" Multiplicity="1" />
+    <End Role="tb_negociacao" Type="Self.tb_negociacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_bem">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_negociacao">
+        <PropertyRef Name="idBem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_veiculo_TB_Bem1">
+    <End Role="tb_bem" Type="Self.tb_bem" Multiplicity="1" />
+    <End Role="tb_veiculo" Type="Self.tb_veiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_bem">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_veiculo">
+        <PropertyRef Name="idBem" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_veiculo_tb_Cor1">
+    <End Role="tb_cor" Type="Self.tb_cor" Multiplicity="1" />
+    <End Role="tb_veiculo" Type="Self.tb_veiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_cor">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_veiculo">
+        <PropertyRef Name="idCor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_Tb_Custo_TB_Empresa1">
+    <End Role="tb_empresa" Type="Self.tb_empresa" Multiplicity="1" />
+    <End Role="tb_custo" Type="Self.tb_custo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_empresa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_custo">
+        <PropertyRef Name="idEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_custos_tb_tipoCusto1">
+    <End Role="tb_tipocusto" Type="Self.tb_tipocusto" Multiplicity="1" />
+    <End Role="tb_custo" Type="Self.tb_custo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tipocusto">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_custo">
+        <PropertyRef Name="idTipoCusto" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_Pessoa_has_TB_Empresa_TB_Empresa1">
+    <End Role="tb_empresa" Type="Self.tb_empresa" Multiplicity="1" />
+    <End Role="tb_pessoa_has_tb_empresa" Type="Self.tb_pessoa_has_tb_empresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_empresa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_pessoa_has_tb_empresa">
+        <PropertyRef Name="idEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_Pessoa_TB_Empresa1">
+    <End Role="tb_empresa" Type="Self.tb_empresa" Multiplicity="1" />
+    <End Role="tb_pessoa" Type="Self.tb_pessoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_empresa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_pessoa">
+        <PropertyRef Name="idEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_Usuario_TB_Empresa1">
+    <End Role="tb_empresa" Type="Self.tb_empresa" Multiplicity="1" />
+    <End Role="tb_usuario" Type="Self.tb_usuario" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_empresa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_usuario">
+        <PropertyRef Name="TB_Empresa_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_Veiculo_TB_Empresa1">
+    <End Role="tb_empresa" Type="Self.tb_empresa" Multiplicity="1" />
+    <End Role="tb_veiculo" Type="Self.tb_veiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_empresa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_veiculo">
+        <PropertyRef Name="idEmpresa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_Pagamento_TB_FormaPagamento1">
+    <End Role="tb_formapagamento" Type="Self.tb_formapagamento" Multiplicity="1" />
+    <End Role="tb_pagamento" Type="Self.tb_pagamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_formapagamento">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_pagamento">
+        <PropertyRef Name="idFormaPagamento" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_modelo_tb_Marca1">
+    <End Role="tb_marca" Type="Self.tb_marca" Multiplicity="1" />
+    <End Role="tb_modelo" Type="Self.tb_modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_marca">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_modelo">
+        <PropertyRef Name="idMarca" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_Modelo_TB_TipoCombustivel1">
+    <End Role="tb_tipocombustivel" Type="Self.tb_tipocombustivel" Multiplicity="1" />
+    <End Role="tb_modelo" Type="Self.tb_modelo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tipocombustivel">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_modelo">
+        <PropertyRef Name="idTipoCompustivel" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_veiculo_tb_modelo1">
+    <End Role="tb_modelo" Type="Self.tb_modelo" Multiplicity="1" />
+    <End Role="tb_veiculo" Type="Self.tb_veiculo" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_modelo">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_veiculo">
+        <PropertyRef Name="idModelo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_tb_negociacao_TB_TipoNegociacao1">
+    <End Role="tb_tiponegociacao" Type="Self.tb_tiponegociacao" Multiplicity="1" />
+    <End Role="tb_negociacao" Type="Self.tb_negociacao" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tiponegociacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_negociacao">
+        <PropertyRef Name="idTipoNegociacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_Pagamentos_tb_negociacao1">
+    <End Role="tb_negociacao" Type="Self.tb_negociacao" Multiplicity="1" />
+    <End Role="tb_pagamento" Type="Self.tb_pagamento" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_negociacao">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_pagamento">
+        <PropertyRef Name="idNegociacao" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="fk_TB_Pessoa_TB_TipoUsuario1">
+    <End Role="tb_tipopessoa" Type="Self.tb_tipopessoa" Multiplicity="1" />
+    <End Role="tb_pessoa" Type="Self.tb_pessoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tb_tipopessoa">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="tb_pessoa">
+        <PropertyRef Name="idTipoPessoa" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="siccoEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tb_bem" EntityType="Self.tb_bem" />
+    <EntitySet Name="tb_cor" EntityType="Self.tb_cor" />
+    <EntitySet Name="tb_custo" EntityType="Self.tb_custo" />
+    <EntitySet Name="tb_empresa" EntityType="Self.tb_empresa" />
+    <EntitySet Name="tb_formapagamento" EntityType="Self.tb_formapagamento" />
+    <EntitySet Name="tb_marca" EntityType="Self.tb_marca" />
+    <EntitySet Name="tb_modelo" EntityType="Self.tb_modelo" />
+    <EntitySet Name="tb_negociacao" EntityType="Self.tb_negociacao" />
+    <EntitySet Name="tb_pagamento" EntityType="Self.tb_pagamento" />
+    <EntitySet Name="tb_pessoa" EntityType="Self.tb_pessoa" />
+    <EntitySet Name="tb_pessoa_has_tb_empresa" EntityType="Self.tb_pessoa_has_tb_empresa" />
+    <EntitySet Name="tb_status" EntityType="Self.tb_status" />
+    <EntitySet Name="tb_tipobem" EntityType="Self.tb_tipobem" />
+    <EntitySet Name="tb_tipocombustivel" EntityType="Self.tb_tipocombustivel" />
+    <EntitySet Name="tb_tipocusto" EntityType="Self.tb_tipocusto" />
+    <EntitySet Name="tb_tiponegociacao" EntityType="Self.tb_tiponegociacao" />
+    <EntitySet Name="tb_tipopessoa" EntityType="Self.tb_tipopessoa" />
+    <EntitySet Name="tb_usuario" EntityType="Self.tb_usuario" />
+    <EntitySet Name="tb_veiculo" EntityType="Self.tb_veiculo" />
+    <AssociationSet Name="fk_TB_Bem_TB_Status1" Association="Self.fk_TB_Bem_TB_Status1">
+      <End Role="tb_status" EntitySet="tb_status" />
+      <End Role="tb_bem" EntitySet="tb_bem" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_Bem_TB_TipoBem1" Association="Self.fk_TB_Bem_TB_TipoBem1">
+      <End Role="tb_tipobem" EntitySet="tb_tipobem" />
+      <End Role="tb_bem" EntitySet="tb_bem" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_custos_TB_Bem1" Association="Self.fk_tb_custos_TB_Bem1">
+      <End Role="tb_bem" EntitySet="tb_bem" />
+      <End Role="tb_custo" EntitySet="tb_custo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tb_Negociacao_TB_Bem1" Association="Self.fk_Tb_Negociacao_TB_Bem1">
+      <End Role="tb_bem" EntitySet="tb_bem" />
+      <End Role="tb_negociacao" EntitySet="tb_negociacao" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_veiculo_TB_Bem1" Association="Self.fk_tb_veiculo_TB_Bem1">
+      <End Role="tb_bem" EntitySet="tb_bem" />
+      <End Role="tb_veiculo" EntitySet="tb_veiculo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_veiculo_tb_Cor1" Association="Self.fk_tb_veiculo_tb_Cor1">
+      <End Role="tb_cor" EntitySet="tb_cor" />
+      <End Role="tb_veiculo" EntitySet="tb_veiculo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_Tb_Custo_TB_Empresa1" Association="Self.fk_Tb_Custo_TB_Empresa1">
+      <End Role="tb_empresa" EntitySet="tb_empresa" />
+      <End Role="tb_custo" EntitySet="tb_custo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_custos_tb_tipoCusto1" Association="Self.fk_tb_custos_tb_tipoCusto1">
+      <End Role="tb_tipocusto" EntitySet="tb_tipocusto" />
+      <End Role="tb_custo" EntitySet="tb_custo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_Pessoa_has_TB_Empresa_TB_Empresa1" Association="Self.fk_TB_Pessoa_has_TB_Empresa_TB_Empresa1">
+      <End Role="tb_empresa" EntitySet="tb_empresa" />
+      <End Role="tb_pessoa_has_tb_empresa" EntitySet="tb_pessoa_has_tb_empresa" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_Pessoa_TB_Empresa1" Association="Self.fk_TB_Pessoa_TB_Empresa1">
+      <End Role="tb_empresa" EntitySet="tb_empresa" />
+      <End Role="tb_pessoa" EntitySet="tb_pessoa" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_Usuario_TB_Empresa1" Association="Self.fk_TB_Usuario_TB_Empresa1">
+      <End Role="tb_empresa" EntitySet="tb_empresa" />
+      <End Role="tb_usuario" EntitySet="tb_usuario" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_Veiculo_TB_Empresa1" Association="Self.fk_TB_Veiculo_TB_Empresa1">
+      <End Role="tb_empresa" EntitySet="tb_empresa" />
+      <End Role="tb_veiculo" EntitySet="tb_veiculo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_Pagamento_TB_FormaPagamento1" Association="Self.fk_TB_Pagamento_TB_FormaPagamento1">
+      <End Role="tb_formapagamento" EntitySet="tb_formapagamento" />
+      <End Role="tb_pagamento" EntitySet="tb_pagamento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_modelo_tb_Marca1" Association="Self.fk_tb_modelo_tb_Marca1">
+      <End Role="tb_marca" EntitySet="tb_marca" />
+      <End Role="tb_modelo" EntitySet="tb_modelo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_Modelo_TB_TipoCombustivel1" Association="Self.fk_TB_Modelo_TB_TipoCombustivel1">
+      <End Role="tb_tipocombustivel" EntitySet="tb_tipocombustivel" />
+      <End Role="tb_modelo" EntitySet="tb_modelo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_veiculo_tb_modelo1" Association="Self.fk_tb_veiculo_tb_modelo1">
+      <End Role="tb_modelo" EntitySet="tb_modelo" />
+      <End Role="tb_veiculo" EntitySet="tb_veiculo" />
+    </AssociationSet>
+    <AssociationSet Name="fk_tb_negociacao_TB_TipoNegociacao1" Association="Self.fk_tb_negociacao_TB_TipoNegociacao1">
+      <End Role="tb_tiponegociacao" EntitySet="tb_tiponegociacao" />
+      <End Role="tb_negociacao" EntitySet="tb_negociacao" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_Pagamentos_tb_negociacao1" Association="Self.fk_TB_Pagamentos_tb_negociacao1">
+      <End Role="tb_negociacao" EntitySet="tb_negociacao" />
+      <End Role="tb_pagamento" EntitySet="tb_pagamento" />
+    </AssociationSet>
+    <AssociationSet Name="fk_TB_Pessoa_TB_TipoUsuario1" Association="Self.fk_TB_Pessoa_TB_TipoUsuario1">
+      <End Role="tb_tipopessoa" EntitySet="tb_tipopessoa" />
+      <End Role="tb_pessoa" EntitySet="tb_pessoa" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

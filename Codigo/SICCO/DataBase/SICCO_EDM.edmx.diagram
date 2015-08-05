@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="28e16565742f491099c344f21e9ce123" Name="Diagram1" ZoomLevel="101">
+        <EntityTypeShape EntityType="SICCO_Model.tb_status" Width="1.5" PointX="0.5" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_bem" Width="1.5" PointX="3.375" PointY="4.25" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_cor" Width="1.5" PointX="3.375" PointY="19.375" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_custo" Width="1.5" PointX="5.625" PointY="5.625" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_empresa" Width="1.5" PointX="3.375" PointY="10.75" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_formapagamento" Width="1.5" PointX="5.625" PointY="20.125" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_marca" Width="1.5" PointX="1.125" PointY="17.125" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_modelo" Width="1.5" PointX="3.375" PointY="15.125" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_negociacao" Width="1.5" PointX="5.625" PointY="0.75" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_pagamento" Width="1.5" PointX="7.875" PointY="1.375" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_pessoa" Width="1.5" PointX="8.625" PointY="9.75" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_pessoa_has_tb_empresa" Width="1.5" PointX="5.625" PointY="25.625" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_tipobem" Width="1.5" PointX="1.125" PointY="5" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_tipocombustivel" Width="1.5" PointX="1.125" PointY="14.75" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_tipocusto" Width="1.5" PointX="3.375" PointY="8.125" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_tiponegociacao" Width="1.5" PointX="3.375" PointY="1.125" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_tipopessoa" Width="1.5" PointX="6.375" PointY="17.125" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_usuario" Width="1.5" PointX="5.625" PointY="14" />
+        <EntityTypeShape EntityType="SICCO_Model.tb_veiculo" Width="1.5" PointX="5.625" PointY="9.25" />
+        <AssociationConnector Association="SICCO_Model.fk_TB_Bem_TB_Status1" />
+        <AssociationConnector Association="SICCO_Model.fk_TB_Bem_TB_TipoBem1" />
+        <AssociationConnector Association="SICCO_Model.fk_tb_custos_TB_Bem1" />
+        <AssociationConnector Association="SICCO_Model.fk_Tb_Negociacao_TB_Bem1" />
+        <AssociationConnector Association="SICCO_Model.fk_tb_veiculo_TB_Bem1" />
+        <AssociationConnector Association="SICCO_Model.fk_tb_veiculo_tb_Cor1" />
+        <AssociationConnector Association="SICCO_Model.fk_Tb_Custo_TB_Empresa1" />
+        <AssociationConnector Association="SICCO_Model.fk_tb_custos_tb_tipoCusto1" />
+        <AssociationConnector Association="SICCO_Model.fk_TB_Pessoa_has_TB_Empresa_TB_Empresa1" />
+        <AssociationConnector Association="SICCO_Model.fk_TB_Pessoa_TB_Empresa1" />
+        <AssociationConnector Association="SICCO_Model.fk_TB_Usuario_TB_Empresa1" />
+        <AssociationConnector Association="SICCO_Model.fk_TB_Veiculo_TB_Empresa1" />
+        <AssociationConnector Association="SICCO_Model.fk_TB_Pagamento_TB_FormaPagamento1" />
+        <AssociationConnector Association="SICCO_Model.fk_tb_modelo_tb_Marca1" />
+        <AssociationConnector Association="SICCO_Model.fk_TB_Modelo_TB_TipoCombustivel1" />
+        <AssociationConnector Association="SICCO_Model.fk_tb_veiculo_tb_modelo1" />
+        <AssociationConnector Association="SICCO_Model.fk_tb_negociacao_TB_TipoNegociacao1" />
+        <AssociationConnector Association="SICCO_Model.fk_TB_Pagamentos_tb_negociacao1" />
+        <AssociationConnector Association="SICCO_Model.fk_TB_Pessoa_TB_TipoUsuario1" />
+        </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

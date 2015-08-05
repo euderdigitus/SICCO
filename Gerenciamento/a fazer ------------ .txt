@@ -1,0 +1,12 @@
+select * from tb_negociacao n inner join tb_cliente c on (n.tb_cliente_CPF_pessoa = c.CPF_pessoa)
+inner join negociacao_veic nv on (n.cod_negociacao = nv.cod_neg) 
+
+
+cor que mais saiu
+
+Clientes que não compraram
+
+Valor recebido no ultimo mês
+
+Modelo de veículo que mais saiu...
+

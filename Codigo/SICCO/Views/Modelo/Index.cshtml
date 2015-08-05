@@ -1,0 +1,63 @@
+﻿@model IEnumerable<SICCO.Database.tb_modelo>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.categoiaModelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tipoModelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.anoModelo)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_marca.marca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_tipocombustivel.tipoCombustivel)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.categoiaModelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tipoModelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descricao)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.anoModelo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_marca.marca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_tipocombustivel.tipoCombustivel)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

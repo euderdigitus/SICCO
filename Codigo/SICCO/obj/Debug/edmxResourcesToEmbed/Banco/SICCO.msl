@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="siccoModelStoreContainer" CdmEntityContainer="siccoEntities">
+    <EntitySetMapping Name="tb_bem">
+      <EntityTypeMapping TypeName="siccoModel.tb_bem">
+        <MappingFragment StoreEntitySet="tb_bem">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="dataCompra" ColumnName="dataCompra" />
+          <ScalarProperty Name="dataVenda" ColumnName="dataVenda" />
+          <ScalarProperty Name="idTipoBem" ColumnName="idTipoBem" />
+          <ScalarProperty Name="idStatus" ColumnName="idStatus" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_cor">
+      <EntityTypeMapping TypeName="siccoModel.tb_cor">
+        <MappingFragment StoreEntitySet="tb_cor">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipoCor" ColumnName="tipoCor" />
+          <ScalarProperty Name="cor" ColumnName="cor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_custo">
+      <EntityTypeMapping TypeName="siccoModel.tb_custo">
+        <MappingFragment StoreEntitySet="tb_custo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="idPessoa" ColumnName="idPessoa" />
+          <ScalarProperty Name="idTipoCusto" ColumnName="idTipoCusto" />
+          <ScalarProperty Name="idBem" ColumnName="idBem" />
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_empresa">
+      <EntityTypeMapping TypeName="siccoModel.tb_empresa">
+        <MappingFragment StoreEntitySet="tb_empresa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nomeFantasia" ColumnName="nomeFantasia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_formapagamento">
+      <EntityTypeMapping TypeName="siccoModel.tb_formapagamento">
+        <MappingFragment StoreEntitySet="tb_formapagamento">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="formaPagamento" ColumnName="formaPagamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_marca">
+      <EntityTypeMapping TypeName="siccoModel.tb_marca">
+        <MappingFragment StoreEntitySet="tb_marca">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="marca" ColumnName="marca" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_modelo">
+      <EntityTypeMapping TypeName="siccoModel.tb_modelo">
+        <MappingFragment StoreEntitySet="tb_modelo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="categoiaModelo" ColumnName="categoiaModelo" />
+          <ScalarProperty Name="tipoModelo" ColumnName="tipoModelo" />
+          <ScalarProperty Name="combutivel" ColumnName="combutivel" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="anoModelo" ColumnName="anoModelo" />
+          <ScalarProperty Name="idMarca" ColumnName="idMarca" />
+          <ScalarProperty Name="idTipoCompustivel" ColumnName="idTipoCompustivel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_negociacao">
+      <EntityTypeMapping TypeName="siccoModel.tb_negociacao">
+        <MappingFragment StoreEntitySet="tb_negociacao">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="dataInicio" ColumnName="dataInicio" />
+          <ScalarProperty Name="dataFim" ColumnName="dataFim" />
+          <ScalarProperty Name="validadeProposta" ColumnName="validadeProposta" />
+          <ScalarProperty Name="valorPropostoVendedor" ColumnName="valorPropostoVendedor" />
+          <ScalarProperty Name="valorPropostoCliente" ColumnName="valorPropostoCliente" />
+          <ScalarProperty Name="observacao" ColumnName="observacao" />
+          <ScalarProperty Name="idTipoNegociacao" ColumnName="idTipoNegociacao" />
+          <ScalarProperty Name="idBem" ColumnName="idBem" />
+          <ScalarProperty Name="idPessoaCliente" ColumnName="idPessoaCliente" />
+          <ScalarProperty Name="idPessoaVendedor" ColumnName="idPessoaVendedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_pagamento">
+      <EntityTypeMapping TypeName="siccoModel.tb_pagamento">
+        <MappingFragment StoreEntitySet="tb_pagamento">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="idNegociacao" ColumnName="idNegociacao" />
+          <ScalarProperty Name="idFormaPagamento" ColumnName="idFormaPagamento" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="valorPago" ColumnName="valorPago" />
+          <ScalarProperty Name="juro" ColumnName="juro" />
+          <ScalarProperty Name="descricao" ColumnName="descricao" />
+          <ScalarProperty Name="dataPagamento" ColumnName="dataPagamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_pessoa">
+      <EntityTypeMapping TypeName="siccoModel.tb_pessoa">
+        <MappingFragment StoreEntitySet="tb_pessoa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="nome" ColumnName="nome" />
+          <ScalarProperty Name="sobreNome" ColumnName="sobreNome" />
+          <ScalarProperty Name="cpfCnpj" ColumnName="cpfCnpj" />
+          <ScalarProperty Name="rg" ColumnName="rg" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="cidade" ColumnName="cidade" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cep" ColumnName="cep" />
+          <ScalarProperty Name="fone" ColumnName="fone" />
+          <ScalarProperty Name="celular" ColumnName="celular" />
+          <ScalarProperty Name="sexo" ColumnName="sexo" />
+          <ScalarProperty Name="nascimento" ColumnName="nascimento" />
+          <ScalarProperty Name="endereco" ColumnName="endereco" />
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="idTipoPessoa" ColumnName="idTipoPessoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_pessoa_has_tb_empresa">
+      <EntityTypeMapping TypeName="siccoModel.tb_pessoa_has_tb_empresa">
+        <MappingFragment StoreEntitySet="tb_pessoa_has_tb_empresa">
+          <ScalarProperty Name="idPessoa" ColumnName="idPessoa" />
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_status">
+      <EntityTypeMapping TypeName="siccoModel.tb_status">
+        <MappingFragment StoreEntitySet="tb_status">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="status" ColumnName="status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tipobem">
+      <EntityTypeMapping TypeName="siccoModel.tb_tipobem">
+        <MappingFragment StoreEntitySet="tb_tipobem">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipoBem" ColumnName="tipoBem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tipocombustivel">
+      <EntityTypeMapping TypeName="siccoModel.tb_tipocombustivel">
+        <MappingFragment StoreEntitySet="tb_tipocombustivel">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipoCombustivel" ColumnName="tipoCombustivel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tipocusto">
+      <EntityTypeMapping TypeName="siccoModel.tb_tipocusto">
+        <MappingFragment StoreEntitySet="tb_tipocusto">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipoCusto" ColumnName="tipoCusto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tiponegociacao">
+      <EntityTypeMapping TypeName="siccoModel.tb_tiponegociacao">
+        <MappingFragment StoreEntitySet="tb_tiponegociacao">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipoNegociacao" ColumnName="tipoNegociacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_tipopessoa">
+      <EntityTypeMapping TypeName="siccoModel.tb_tipopessoa">
+        <MappingFragment StoreEntitySet="tb_tipopessoa">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tipoPessoa" ColumnName="tipoPessoa" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_usuario">
+      <EntityTypeMapping TypeName="siccoModel.tb_usuario">
+        <MappingFragment StoreEntitySet="tb_usuario">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="login" ColumnName="login" />
+          <ScalarProperty Name="senha" ColumnName="senha" />
+          <ScalarProperty Name="TB_Pessoa_id" ColumnName="TB_Pessoa_id" />
+          <ScalarProperty Name="TB_Empresa_id" ColumnName="TB_Empresa_id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tb_veiculo">
+      <EntityTypeMapping TypeName="siccoModel.tb_veiculo">
+        <MappingFragment StoreEntitySet="tb_veiculo">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="placa" ColumnName="placa" />
+          <ScalarProperty Name="chassi" ColumnName="chassi" />
+          <ScalarProperty Name="idConcessionaria" ColumnName="idConcessionaria" />
+          <ScalarProperty Name="idModelo" ColumnName="idModelo" />
+          <ScalarProperty Name="idCor" ColumnName="idCor" />
+          <ScalarProperty Name="idBem" ColumnName="idBem" />
+          <ScalarProperty Name="idEmpresa" ColumnName="idEmpresa" />
+          <ScalarProperty Name="lote" ColumnName="lote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

@@ -1,0 +1,13 @@
+================ IDEIAS DO PROFESSOR DÓSEA =====================
+
+1º O sistema deve tratar de vender qualquer artigo usado, desde auto-moveis até imóveis.
+
+2º O sistema poderá trabalhar com veículos novos, desde que criemos duas regras de compras diferentes, poís umas trata com um cliente físico e a outra trata com um fornecedor jurídico, além do mais, os veículos novos podem ser comprador por lote,pacotes.
+
+3º O sistema deve abrangir bastante a parte de gastos, tanto do estabelicimento, quanto do bem a vendido.
+
+4º Os dados coerentes aos gastos dos bens, poderão ser compartilhados entre os outros estabelecimentos, por ex: Um veículo que teve sua pintura restaurada por um estabelecimento, caso este veículo vá ser vendido a outro estabelecimento após um tempo, o mesmo poderá saber quais os gastos que aquele veículo teve e ter uma noção do valor que poderá compra-lo.
+
+5º Um cliente poderá fazer um pedido de notificação para obter um bem desejado, assim todos os estabelecimentos do seu estado, receberão notificação deste cliente, quando obitiverem o carro que o cliente estava procurando e podeão entrar em contato com o mesmo.
+
+6º Anexar documentos ao cadastro, tanto do cliente, quanto do bem.

@@ -1,0 +1,119 @@
+﻿@model IEnumerable<SICCO.Database.tb_pessoa>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Nome
+        </th>
+        <th>
+            Sobre Nome
+        </th>
+        <th>
+            Cpf/Cnpjs
+        </th>
+        <th>
+            RG
+        </th>
+        <th>
+           Email
+        </th>
+        <th>
+            Cidade
+        </th>
+        <th>
+            Estado
+        </th>
+        <th>
+           Cep
+        </th>
+        <th>
+            Fone
+        </th>
+        <th>
+           Celular
+        </th>
+        <th>
+            Sexo
+        </th>
+        <th>
+            Data de Nascimento
+        </th>
+        <th>
+            Endereço
+        </th>
+        <th>
+            Nome Fantasia
+        </th>
+        <th>
+            Tipo
+        </th>
+        <th>
+            Login
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sobreNome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cpfCnpj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.rg)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cidade)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cep)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.celular)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.sexo)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nascimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.endereco)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_tipopessoa.tipoPessoa)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detalhe", "Details", new { id=item.id }) |
+            @Html.ActionLink("Remover", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>
