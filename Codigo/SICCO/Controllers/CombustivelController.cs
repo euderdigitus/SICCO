@@ -46,7 +46,7 @@ namespace SICCO.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="id,combustivel")] tb_tipocombustivel tb_tipocombustivel)
+        public ActionResult Create([Bind(Include="id,tipoCombustivel")] tb_tipocombustivel tb_tipocombustivel)
         {
             if (ModelState.IsValid)
             {
@@ -80,13 +80,22 @@ namespace SICCO.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="id,tipoCombustivel")] tb_tipocombustivel tb_tipocombustivel)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(tb_tipocombustivel).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    TempData["mensagemCerto"] = "Dados alterados com sucesso! ";        
+                    db.Entry(tb_tipocombustivel).State = EntityState.Modified;
+                    db.SaveChanges();
+                    return RedirectToAction("Edit/"+tb_tipocombustivel.id);
+                }
+                return View(tb_tipocombustivel);
             }
-            return View(tb_tipocombustivel);
+            catch(DataException)
+            {
+                TempData["mensagemErro"] = "Não foi possível atualizar, tente novamente mais tarde!";        
+                return RedirectToAction("Edit/"+tb_tipocombustivel.id);
+            }
         }
 
         // GET: /Combustivel/Delete/5
@@ -103,16 +112,24 @@ namespace SICCO.Controllers
             }
             return View(tb_tipocombustivel);
         }
-
         // POST: /Combustivel/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            try{
             tb_tipocombustivel tb_tipocombustivel = db.tb_tipocombustivel.Find(id);
             db.tb_tipocombustivel.Remove(tb_tipocombustivel);
             db.SaveChanges();
             return RedirectToAction("Index");
+            }
+            catch(System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                TempData["mensagemErro"] = "Este COMBUSTÍVEL não pode ser removida, pois está sendo utilizada em algum Modelo, altere o COMBUSTÍVEL do Modelo para poder remove-lo!";        
+                return RedirectToAction("Delete/"+id);
+            }
+
+
         }
 
         protected override void Dispose(bool disposing)

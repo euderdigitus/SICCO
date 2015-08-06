@@ -1,18 +1,16 @@
 ﻿@model IEnumerable<SICCO.Database.tb_tipocombustivel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Combustível";
 }
 
-<h2>Index</h2>
+<h3>Lista de Combustíveis</h3>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.tipoCombustivel)
+            Descrição
         </th>
         <th></th>
     </tr>
@@ -23,11 +21,16 @@
             @Html.DisplayFor(modelItem => item.tipoCombustivel)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detalhe", "Details", new { id=item.id }) |
+            @Html.ActionLink("Remover", "Delete", new { id=item.id })
         </td>
     </tr>
 }
+  
 
 </table>
+
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>

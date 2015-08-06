@@ -46,7 +46,7 @@ namespace SICCO.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="tipoCor,cor")] tb_cor tb_cor)
+        public ActionResult Create([Bind(Include = "tipoCor,cor")] tb_cor tb_cor)
         {
             if (ModelState.IsValid)
             {
@@ -78,15 +78,24 @@ namespace SICCO.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="id,tipoCor,cor")] tb_cor tb_cor)
+        public ActionResult Edit([Bind(Include = "id,tipoCor,cor")] tb_cor tb_cor)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(tb_cor).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+               
+                if (ModelState.IsValid)
+                {
+                    db.Entry(tb_cor).State = EntityState.Modified;
+                    db.SaveChanges();
+                    TempData["mensagemCerto"] = "Dados alterados com sucesso!";
+                    return RedirectToAction("Edit/" + tb_cor.id);
+                }
+                return View(tb_cor);
             }
-            return View(tb_cor);
+            catch (DataException)
+            {
+                return RedirectToAction("Edit/" + tb_cor.id);
+            }
         }
 
         // GET: /Cor/Delete/5
@@ -109,10 +118,18 @@ namespace SICCO.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            tb_cor tb_cor = db.tb_cor.Find(id);
-            db.tb_cor.Remove(tb_cor);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                tb_cor tb_cor = db.tb_cor.Find(id);
+                db.tb_cor.Remove(tb_cor);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                TempData["mensagemErro"] = "Esta COR não pode ser removida, pois está sendo utilizada em algum veículo, altere a COR do veículo para poder remove-la!";
+                return RedirectToAction("Delete/" + id);
+            }
         }
 
         protected override void Dispose(bool disposing)

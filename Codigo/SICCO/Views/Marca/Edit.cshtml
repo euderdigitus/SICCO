@@ -1,21 +1,32 @@
 ﻿@model SICCO.Database.tb_marca
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar Marca";
 }
 
-<h2>Edit</h2>
-
+<h3>Alterar Marca</h3>
+@if (TempData["mensagemCerto"] != null)
+{
+    <div class="alert-success">
+        @TempData["mensagemCerto"]
+    </div>
+}
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>tb_marca</h4>
         <hr />
         @Html.ValidationSummary(true)
         @Html.HiddenFor(model => model.id)
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.tipo, "Tipo de Marca", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("tipo", new List<SelectListItem> { new SelectListItem { Text = "Nacional", Value = "Nacional" }, new SelectListItem { Text = "Importada", Value = "Importada" } }, new { @Style = "Width:500px;height:40px;", @class = "form-control input-lg" })
+                @Html.ValidationMessageFor(model => model.tipo, "", new { @class = "text-danger" })
+            </div>
+        </div>
         <div class="form-group">
             @Html.LabelFor(model => model.marca, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
@@ -26,12 +37,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-warning" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar", "Index")
 </div>

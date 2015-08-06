@@ -61,6 +61,16 @@
     </tr>
 
 @foreach (var item in Model) {
+    
+    
+            if (item.sexo == "M")
+            {
+                item.sexo = "Masculino";
+            }else
+            {
+                item.sexo = "Femino";
+            }
+    
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.nome)

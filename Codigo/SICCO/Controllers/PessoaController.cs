@@ -36,6 +36,14 @@ namespace SICCO.Controllers
             {
                 return HttpNotFound();
             }
+              if (tb_pessoa.sexo == "M")
+            {
+                tb_pessoa.sexo = "Masculino";
+            }
+            else
+            {
+                tb_pessoa.sexo = "Feminino";
+            }
             return View(tb_pessoa);
         }
 

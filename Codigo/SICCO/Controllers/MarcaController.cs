@@ -46,7 +46,7 @@ namespace SICCO.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="id,marca,tipo")] tb_marca tb_marca)
+        public ActionResult Create([Bind(Include = "id,marca,tipo")] tb_marca tb_marca)
         {
             if (ModelState.IsValid)
             {
@@ -78,15 +78,25 @@ namespace SICCO.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="id,marca")] tb_marca tb_marca)
+        public ActionResult Edit([Bind(Include = "id,marca,tipo")] tb_marca tb_marca)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(tb_marca).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                
+                if (ModelState.IsValid)
+                {
+                    db.Entry(tb_marca).State = EntityState.Modified;
+                    db.SaveChanges();
+                    TempData["mensagemCerto"] = "Dados alterados com sucesso!";
+                    return RedirectToAction("Edit/" + tb_marca.id);
+                }
+                return View(tb_marca);
             }
-            return View(tb_marca);
+            catch (DataException)
+            {
+                return RedirectToAction("Edit/" + tb_marca.id);
+
+            }
         }
 
         // GET: /Marca/Delete/5
@@ -109,10 +119,18 @@ namespace SICCO.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            tb_marca tb_marca = db.tb_marca.Find(id);
-            db.tb_marca.Remove(tb_marca);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                tb_marca tb_marca = db.tb_marca.Find(id);
+                db.tb_marca.Remove(tb_marca);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                TempData["mensagemErro"] = "Esta Marca não pode ser removida, pois está sendo utilizada em algum modelo, altere a MARCA do modelo para poder remove-la!";
+                return RedirectToAction("Delete/" + id);
+            }
         }
 
         protected override void Dispose(bool disposing)

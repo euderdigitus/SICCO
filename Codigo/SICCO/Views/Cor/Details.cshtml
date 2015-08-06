@@ -1,17 +1,16 @@
 ﻿@model SICCO.Database.tb_cor
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhe";
 }
 
-<h2>Details</h2>
+<h2>Detalhes</h2>
 
 <div>
-    <h4>tb_cor</h4>
-	<hr />
+    <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.tipoCor)
+            <b>Tipo da Cor</b>
         </dt>
 
         <dd>
@@ -19,7 +18,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cor)
+            <b>Cor</b>
         </dt>
 
         <dd>
@@ -29,6 +28,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Voltar", "Index")
 </p>
