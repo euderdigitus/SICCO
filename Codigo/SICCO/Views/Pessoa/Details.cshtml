@@ -1,133 +1,132 @@
 ﻿@model SICCO.Database.tb_pessoa
 
 @{
-    ViewBag.Title = "Detalhes";
+    ViewBag.Title = "Detalhe";
 }
 
-<h2>Details</h2>
+<h3>Detalhes</h3>
 
 <div>
  
     <hr />
-    <dl class="dl-horizontal">
+    <dl>
         <dt>
-            @Html.DisplayNameFor(model => model.nome)
+            <div class="control-label col-md-2">
+                <b>Nome</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.nome)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.sobreNome)
+            <div class="control-label col-md-2">
+                <b>Sobre Nome</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.sobreNome)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.cpfCnpj)
+            <div class="control-label col-md-2">
+                <b>Cpf/Cnpj</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.cpfCnpj)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.rg)
+            <div class="control-label col-md-2">
+                <b>RG</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.rg)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.email)
+            <div class="control-label col-md-2">
+                <b>E-mail</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.email)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.cidade)
+            <div class="control-label col-md-2">
+                <b>Cidade</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.cidade)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.estado)
+            <div class="control-label col-md-2">
+                <b>Estado</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.estado)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.cep)
+            <div class="control-label col-md-2">
+                <b>Cep</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.cep)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.fone)
+            <div class="control-label col-md-2">
+                <b>Telefone</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.fone)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.celular)
+            <div class="control-label col-md-2">
+                <b>Celular</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.celular)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.sexo)
+            <div class="control-label col-md-2">
+                <b>Sexo</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.sexo)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.nascimento)
+            <div class="control-label col-md-2">
+                <b>Data de Nascimento</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.nascimento)
         </dd>
-
         <dt>
-            @Html.DisplayNameFor(model => model.endereco)
+            <div class="control-label col-md-2">
+                <b>Endereço</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.endereco)
         </dd>
 
-     
         <dt>
-            @Html.DisplayNameFor(model => model.tb_tipopessoa.tipoPessoa)
+            <div class="control-label col-md-2">
+                <b>Pessoa</b>
+            </div>
         </dt>
-
         <dd>
             @Html.DisplayFor(model => model.tb_tipopessoa.tipoPessoa)
         </dd>
 
-    
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Voltar", "Index")
 </p>

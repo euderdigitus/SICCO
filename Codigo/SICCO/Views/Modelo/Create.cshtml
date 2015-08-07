@@ -1,17 +1,16 @@
 ﻿@model SICCO.Database.tb_modelo
 
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = "Cadastro de Modelo";
 }
 
-<h2>Create</h2>
+<h3>Cadastro de Modelo</h3>
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h4>tb_modelo</h4>
         <hr />
         @Html.ValidationSummary(true)
 
@@ -25,7 +24,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.tipoModelo, "Tipo da Modelo", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.tipoModelo, "Tipo do Modelo", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("tipoModelo", new List<SelectListItem> { new SelectListItem { Text = "Nacional", Value = "Nacional" }, new SelectListItem { Text = "Importado", Value = "Importado" } }, "Selecione", new { @Style = "Width:500px;height:40px;", @class = "form-control input-lg" })
                 @Html.ValidationMessageFor(model => model.tipoModelo, "", new { @class = "text-danger" })
@@ -33,7 +32,9 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.descricao, new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2">
+                <b>Modelo</b>
+            </div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.descricao)
                 @Html.ValidationMessageFor(model => model.descricao)
@@ -41,7 +42,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.anoModelo, new { @class = "control-label col-md-2" })
+            <div class="control-label col-md-2">
+               <b>Ano/Modelo</b>
+
+            </div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.anoModelo)
                 @Html.ValidationMessageFor(model => model.anoModelo)
@@ -49,7 +53,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.idMarca, "idMarca", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.idMarca, "Marca", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("idMarca", String.Empty)
                 @Html.ValidationMessageFor(model => model.idMarca)
@@ -57,7 +61,7 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.idTipoCompustivel, "idTipoCompustivel", new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.idTipoCompustivel, "Combustível", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("idTipoCompustivel", String.Empty)
                 @Html.ValidationMessageFor(model => model.idTipoCompustivel)
@@ -66,12 +70,12 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+                <input type="submit" value="Cadastrar" class="btn btn-success" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar", "Index")
 </div>

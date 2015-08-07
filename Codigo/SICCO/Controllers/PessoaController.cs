@@ -67,6 +67,7 @@ namespace SICCO.Controllers
         {
             if (ModelState.IsValid)
             {
+                tb_pessoa.idEmpresa = 1;
                 db.tb_pessoa.Add(tb_pessoa);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -103,15 +104,25 @@ namespace SICCO.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id,nome,sobreNome,cpfCnpj,rg,email,cidade,estado,cep,fone,celular,sexo,nascimento,endereco,idUsuario,idEmpresa,idTipoPessoa")] tb_pessoa tb_pessoa)
         {
+            try
+            {
             if (ModelState.IsValid)
             {
+                TempData["mensagemCerto"] = "Dados alterados com sucesso! ";
+                tb_pessoa.idEmpresa = 1;
                 db.Entry(tb_pessoa).State = EntityState.Modified;
                 db.SaveChanges();
-                return RedirectToAction("Index");
+                return RedirectToAction("Edit/"+tb_pessoa.id);
             }
             ViewBag.idEmpresa = new SelectList(db.tb_empresa, "id", "nomeFantasia", tb_pessoa.idEmpresa);
             ViewBag.idTipoPessoa = new SelectList(db.tb_tipopessoa, "id", "tipoPessoa", tb_pessoa.idTipoPessoa);
             return View(tb_pessoa);
+            }
+            catch(DataException)
+            {
+                TempData["mensagemErro"] = "Não foi possível atualizar, tente novamente mais tarde!";        
+                return RedirectToAction("Edit/"+tb_pessoa.id);
+            }
         }
 
         // GET: Pessoa/Delete/5
@@ -127,6 +138,14 @@ namespace SICCO.Controllers
             {
                 return HttpNotFound();
             }
+            if (tb_pessoa.sexo == "M")
+            {
+                tb_pessoa.sexo = "Masculino";
+            }
+            else
+            {
+                tb_pessoa.sexo = "Feminino";
+            }
             return View(tb_pessoa);
         }
 
@@ -136,10 +155,17 @@ namespace SICCO.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
+            try{
             tb_pessoa tb_pessoa = db.tb_pessoa.Find(id);
             db.tb_pessoa.Remove(tb_pessoa);
             db.SaveChanges();
             return RedirectToAction("Index");
+            }
+            catch(System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                TempData["mensagemErro"] = "Esta PESSOA não pode ser removida, pois tem ligação com algum Veículo.";        
+                return RedirectToAction("Delete/"+id);
+            }
         }
 
         protected override void Dispose(bool disposing)

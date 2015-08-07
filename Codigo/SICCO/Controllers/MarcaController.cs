@@ -128,7 +128,7 @@ namespace SICCO.Controllers
             }
             catch (System.Data.Entity.Infrastructure.DbUpdateException)
             {
-                TempData["mensagemErro"] = "Esta Marca não pode ser removida, pois está sendo utilizada em algum modelo, altere a MARCA do modelo para poder remove-la!";
+                TempData["mensagemErro"] = "Esta MARCA não pode ser removida, pois está sendo utilizada em algum modelo, altere a MARCA do modelo para poder remove-la!";
                 return RedirectToAction("Delete/" + id);
             }
         }

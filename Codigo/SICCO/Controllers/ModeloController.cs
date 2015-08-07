@@ -87,15 +87,23 @@ namespace SICCO.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include="id,categoiaModelo,tipoModelo,combutivel,descricao,anoModelo,idMarca,idTipoCompustivel")] tb_modelo tb_modelo)
         {
-            if (ModelState.IsValid)
+            try
             {
-                db.Entry(tb_modelo).State = EntityState.Modified;
-                db.SaveChanges();
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    db.Entry(tb_modelo).State = EntityState.Modified;
+                    db.SaveChanges();
+                    TempData["mensagemCerto"] = "Dados alterados com sucesso!";
+                    return RedirectToAction("Edit/" + tb_modelo.id);
+                }
+                ViewBag.idMarca = new SelectList(db.tb_marca, "id", "marca", tb_modelo.idMarca);
+                ViewBag.idTipoCompustivel = new SelectList(db.tb_tipocombustivel, "id", "tipoCombustivel", tb_modelo.idTipoCompustivel);
+                return View(tb_modelo);
             }
-            ViewBag.idMarca = new SelectList(db.tb_marca, "id", "marca", tb_modelo.idMarca);
-            ViewBag.idTipoCompustivel = new SelectList(db.tb_tipocombustivel, "id", "tipoCombustivel", tb_modelo.idTipoCompustivel);
-            return View(tb_modelo);
+            catch(DataException)
+            {
+                return RedirectToAction("Edit/" + tb_modelo.id);
+            }
         }
 
         // GET: /Modelo/Delete/5
@@ -118,10 +126,18 @@ namespace SICCO.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            tb_modelo tb_modelo = db.tb_modelo.Find(id);
-            db.tb_modelo.Remove(tb_modelo);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                tb_modelo tb_modelo = db.tb_modelo.Find(id);
+                db.tb_modelo.Remove(tb_modelo);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (System.Data.Entity.Infrastructure.DbUpdateException)
+            {
+                TempData["mensagemErro"] = "Este MODELO não pode ser removid, pois está sendo utilizado em algum veículo, altere o MODELO do veíclo para poder remove-lo!";
+                return RedirectToAction("Delete/" + id);
+            }
         }
 
         protected override void Dispose(bool disposing)

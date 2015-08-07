@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2>Lista de Clientes</h2>
 
 
 <table class="table">
@@ -19,19 +19,7 @@
             Cpf/Cnpjs
         </th>
         <th>
-            RG
-        </th>
-        <th>
            Email
-        </th>
-        <th>
-            Cidade
-        </th>
-        <th>
-            Estado
-        </th>
-        <th>
-           Cep
         </th>
         <th>
             Fone
@@ -43,19 +31,7 @@
             Sexo
         </th>
         <th>
-            Data de Nascimento
-        </th>
-        <th>
-            Endereço
-        </th>
-        <th>
-            Nome Fantasia
-        </th>
-        <th>
-            Tipo
-        </th>
-        <th>
-            Login
+            Pessoa
         </th>
         <th></th>
     </tr>
@@ -82,19 +58,7 @@
             @Html.DisplayFor(modelItem => item.cpfCnpj)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.rg)
-        </td>
-        <td>
             @Html.DisplayFor(modelItem => item.email)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cidade)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.estado)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cep)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.fone)
@@ -104,12 +68,6 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.sexo)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.nascimento)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.endereco)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.tb_tipopessoa.tipoPessoa)

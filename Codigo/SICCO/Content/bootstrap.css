@@ -1096,7 +1096,7 @@ pre code {
     float: left;
   }
   .col-md-1 {
-    width: 8.333333333333332%;
+    width: 20%;
   }
   .col-md-2 {
     width: 16.666666666666664%;
@@ -1937,7 +1937,7 @@ textarea.input-lg {
   .form-inline .form-group {
     display: inline-block;
     margin-bottom: 0;
-    vertical-align: middle;
+    vertical-align: inherit;
   }
   .form-inline .form-control {
     display: inline-block;

@@ -4,30 +4,28 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h3>Lista de Modelos</h3>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.categoiaModelo)
+            <b>Categoria</b>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tipoModelo)
+            <b>Tipo</b>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.descricao)
+            <b>Modelo</b>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.anoModelo)
+            <b>Ano/Modelo</b>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tb_marca.marca)
+            <b>Marca</b>
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.tb_tipocombustivel.tipoCombustivel)
+            <b>Combustível</b>
         </th>
         <th></th>
     </tr>
@@ -53,11 +51,14 @@
             @Html.DisplayFor(modelItem => item.tb_tipocombustivel.tipoCombustivel)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+            @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.id }) |
+            @Html.ActionLink("Remover", "Delete", new { id=item.id })
         </td>
     </tr>
 }
 
 </table>
+<p>
+    @Html.ActionLink("Novo", "Create")
+</p>

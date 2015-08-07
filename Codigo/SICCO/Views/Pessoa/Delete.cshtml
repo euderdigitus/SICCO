@@ -1,18 +1,25 @@
 ﻿@model SICCO.Database.tb_pessoa
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Remover";
 }
 
-<h2>Delete</h2>
+<h2>Remover</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Tem certeza que deseja remover este cliente?</h3>
 <div>
-    <h4>tb_pessoa</h4>
+    @if (TempData["mensagemErro"] != null)
+    {
+        <div class="alert-danger">
+            @TempData["mensagemErro"]
+        </div>
+    }
     <hr />
-    <dl class="dl-horizontal">
+    <dl>
         <dt>
-            @Html.DisplayNameFor(model => model.nome)
+            <div class="control-label col-md-2">
+                <b>Nome</b>
+            </div>
         </dt>
 
         <dd>
@@ -20,7 +27,9 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.sobreNome)
+            <div class="control-label col-md-2">
+                <b>Sobre Nome</b>
+            </div>
         </dt>
 
         <dd>
@@ -28,7 +37,9 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cpfCnpj)
+            <div class="control-label col-md-2">
+                <b>Cpf/Cnpj</b>
+            </div>
         </dt>
 
         <dd>
@@ -36,7 +47,9 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.rg)
+            <div class="control-label col-md-2">
+                <b>RG</b>
+            </div>
         </dt>
 
         <dd>
@@ -44,7 +57,9 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.email)
+            <div class="control-label col-md-2">
+                <b>E-mail</b>
+            </div>
         </dt>
 
         <dd>
@@ -52,7 +67,9 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cidade)
+            <div class="control-label col-md-2">
+                <b>Cidade</b>
+            </div>
         </dt>
 
         <dd>
@@ -60,7 +77,9 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.estado)
+            <div class="control-label col-md-2">
+                <b>Estado</b>
+            </div>
         </dt>
 
         <dd>
@@ -68,7 +87,9 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cep)
+            <div class="control-label col-md-2">
+                <b>Cep</b>
+            </div>
         </dt>
 
         <dd>
@@ -76,7 +97,9 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fone)
+            <div class="control-label col-md-2">
+                <b>Telefone</b>
+            </div>
         </dt>
 
         <dd>
@@ -84,7 +107,9 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.celular)
+            <div class="control-label col-md-2">
+                <b>Celular</b>
+            </div>
         </dt>
 
         <dd>
@@ -92,7 +117,9 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.sexo)
+            <div class="control-label col-md-2">
+                <b>Sexo</b>
+            </div>
         </dt>
 
         <dd>
@@ -100,7 +127,9 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.nascimento)
+            <div class="control-label col-md-2">
+                <b>Data de Nascimento</b>
+            </div>
         </dt>
 
         <dd>
@@ -108,7 +137,9 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.endereco)
+            <div class="control-label col-md-2">
+                <b>Endereço</b>
+            </div>
         </dt>
 
         <dd>
@@ -118,7 +149,9 @@
     
 
         <dt>
-            @Html.DisplayNameFor(model => model.tb_tipopessoa.tipoPessoa)
+            <div class="control-label col-md-2">
+                <b>Pessoa</b>
+            </div>
         </dt>
 
         <dd>
@@ -133,8 +166,8 @@
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Remover" class="btn btn-danger" /> |
+            @Html.ActionLink("Voltar", "Index")
         </div>
     }
 </div>

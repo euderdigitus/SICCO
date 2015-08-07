@@ -1,17 +1,16 @@
 ﻿@model SICCO.Database.tb_modelo
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalhe";
 }
 
-<h2>Details</h2>
+<h3>Detalhes</h3>
 
 <div>
-    <h4>tb_modelo</h4>
 	<hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.categoiaModelo)
+            <b>Categoria:</b>
         </dt>
 
         <dd>
@@ -19,7 +18,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tipoModelo)
+            <b>Tipo do Modelo:</b>
         </dt>
 
         <dd>
@@ -27,7 +26,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.descricao)
+            <b>Modelo:</b>
         </dt>
 
         <dd>
@@ -35,7 +34,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.anoModelo)
+            <b>Ano/Modelo:</b>
         </dt>
 
         <dd>
@@ -43,7 +42,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tb_marca.marca)
+            <b>Marca:</b>
         </dt>
 
         <dd>
@@ -51,7 +50,7 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.tb_tipocombustivel.tipoCombustivel)
+            <b>Combustível</b>
         </dt>
 
         <dd>
@@ -61,6 +60,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Voltar", "Index")
 </p>
