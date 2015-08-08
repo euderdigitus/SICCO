@@ -188,6 +188,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SICCO_EDM.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Database\SICCO_EDM1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SICCO_EDM.tt</DependentUpon>
+    </Compile>
     <Compile Include="Database\tb_bem.cs">
       <DependentUpon>SICCO_EDM.tt</DependentUpon>
     </Compile>
@@ -277,6 +282,7 @@
     <Content Include="Database\SICCO_EDM.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>SICCO_EDM.edmx</DependentUpon>
+      <LastGenOutput>SICCO_EDM1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.min.js" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />

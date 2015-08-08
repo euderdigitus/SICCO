@@ -11,6 +11,7 @@ namespace SICCO.Database
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tb_pessoa
     {
@@ -23,18 +24,29 @@ namespace SICCO.Database
         }
     
         public int id { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string nome { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string sobreNome { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string cpfCnpj { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string rg { get; set; }
         public string email { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string cidade { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string estado { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string cep { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string fone { get; set; }
         public string celular { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string sexo { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string nascimento { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string endereco { get; set; }
         public int idEmpresa { get; set; }
         public int idTipoPessoa { get; set; }

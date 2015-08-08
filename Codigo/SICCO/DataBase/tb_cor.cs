@@ -11,6 +11,7 @@ namespace SICCO.Database
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tb_cor
     {
@@ -20,7 +21,9 @@ namespace SICCO.Database
         }
     
         public int id { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string tipoCor { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string cor { get; set; }
     
         public virtual ICollection<tb_veiculo> tb_veiculo { get; set; }

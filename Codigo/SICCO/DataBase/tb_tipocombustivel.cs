@@ -11,6 +11,7 @@ namespace SICCO.Database
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tb_tipocombustivel
     {
@@ -20,6 +21,7 @@ namespace SICCO.Database
         }
     
         public int id { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string tipoCombustivel { get; set; }
     
         public virtual ICollection<tb_modelo> tb_modelo { get; set; }
