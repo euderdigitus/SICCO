@@ -32,21 +32,29 @@ namespace SICCO.Database
         public string cpfCnpj { get; set; }
         [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string rg { get; set; }
+        [StringLength(45, ErrorMessage = "O campo deve ter no máximo 45 caracteres.")]
+        [RegularExpression(@"\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*", ErrorMessage = "O email informado não é valido")]
         public string email { get; set; }
         [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
+        [StringLength(45, ErrorMessage = "O campo deve ter no máximo 45 caracteres.")]
         public string cidade { get; set; }
         [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
+        [StringLength(25, ErrorMessage = "O campo deve ter no máximo 25 caracteres.")]
         public string estado { get; set; }
         [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
+        [StringLength(10, ErrorMessage = "O campo deve ter no máximo 10 caracteres.")]
         public string cep { get; set; }
-        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
+        [StringLength(12, ErrorMessage = "O campo deve ter no máximo 12 caracteres.")]
         public string fone { get; set; }
+        [StringLength(12, ErrorMessage = "O campo deve ter no máximo 12 caracteres.")]
         public string celular { get; set; }
         [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string sexo { get; set; }
         [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
+        [StringLength(10, ErrorMessage = "O campo deve ter no máximo 10 caracteres.")]
         public string nascimento { get; set; }
         [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
+        [StringLength(45, ErrorMessage = "O campo deve ter no máximo 45 caracteres.")]
         public string endereco { get; set; }
         public int idEmpresa { get; set; }
         public int idTipoPessoa { get; set; }

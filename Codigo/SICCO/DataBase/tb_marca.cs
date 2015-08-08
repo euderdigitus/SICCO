@@ -24,6 +24,7 @@ namespace SICCO.Database
         [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string marca { get; set; }
         [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
+        [StringLength(30, ErrorMessage = "O campo deve ter no máximo 25 caracteres.")]
         public string tipo { get; set; }
     
         public virtual ICollection<tb_modelo> tb_modelo { get; set; }
