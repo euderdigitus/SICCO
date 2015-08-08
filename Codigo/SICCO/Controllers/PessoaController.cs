@@ -80,7 +80,7 @@ namespace SICCO.Controllers
 
         // GET: Pessoa/Edit/5
         [Authorize]
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
