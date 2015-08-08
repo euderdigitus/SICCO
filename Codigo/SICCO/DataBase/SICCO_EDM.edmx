@@ -62,7 +62,7 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="categoiaModelo" Type="varchar"  MaxLength="45" Nullable="false" />
+          <Property Name="categoiaModelo" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="tipoModelo" Type="varchar" MaxLength="25" Nullable="false" />
           <Property Name="descricao" Type="varchar" MaxLength="45" Nullable="false" />
           <Property Name="anoModelo" Type="varchar" MaxLength="9" Nullable="false" />

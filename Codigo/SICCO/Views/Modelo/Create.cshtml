@@ -37,7 +37,7 @@
             </div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.descricao)
-                @Html.ValidationMessageFor(model => model.descricao)
+                @Html.ValidationMessageFor(model => model.descricao, "", new { @class = "text-danger"})
             </div>
         </div>
 
@@ -48,7 +48,7 @@
             </div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.anoModelo)
-                @Html.ValidationMessageFor(model => model.anoModelo)
+                @Html.ValidationMessageFor(model => model.anoModelo, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -56,7 +56,7 @@
             @Html.LabelFor(model => model.idMarca, "Marca", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("idMarca", String.Empty)
-                @Html.ValidationMessageFor(model => model.idMarca)
+                @Html.ValidationMessageFor(model => model.idMarca, "", new { @class = "text-danger" })
             </div>
         </div>
 
@@ -64,7 +64,7 @@
             @Html.LabelFor(model => model.idTipoCompustivel, "Combustível", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.DropDownList("idTipoCompustivel", String.Empty)
-                @Html.ValidationMessageFor(model => model.idTipoCompustivel)
+                @Html.ValidationMessageFor(model => model.idTipoCompustivel, "", new { @class = "text-danger" })
             </div>
         </div>
 

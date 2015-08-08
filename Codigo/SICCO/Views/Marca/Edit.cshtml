@@ -31,7 +31,7 @@
             @Html.LabelFor(model => model.marca, new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 @Html.EditorFor(model => model.marca)
-                @Html.ValidationMessageFor(model => model.marca)
+                @Html.ValidationMessageFor(model => model.marca, "", new { @class = "text-danger"}
             </div>
         </div>
 

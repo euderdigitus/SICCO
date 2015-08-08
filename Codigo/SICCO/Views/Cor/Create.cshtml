@@ -28,7 +28,7 @@
             </div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.cor)
-                @Html.ValidationMessageFor(model => model.cor)
+                @Html.ValidationMessageFor(model => model.cor, "", new { @class = "text-danger" })
             </div>
         </div>
 

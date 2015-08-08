@@ -11,6 +11,7 @@ namespace SICCO.Database
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     
     public partial class tb_modelo
     {
@@ -20,9 +21,15 @@ namespace SICCO.Database
         }
     
         public int id { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string categoiaModelo { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
         public string tipoModelo { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
+        [StringLength(45, ErrorMessage = "O campo deve ter no máximo 45 caracteres.")]
         public string descricao { get; set; }
+        [Required(ErrorMessage = "O preenchimento deste campo é obrigatório")]
+        [StringLength(9, ErrorMessage = "O campo deve ter no máximo 9 caracteres.")]
         public string anoModelo { get; set; }
         public int idMarca { get; set; }
         public int idTipoCompustivel { get; set; }

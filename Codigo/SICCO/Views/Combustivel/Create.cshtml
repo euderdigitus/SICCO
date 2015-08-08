@@ -20,7 +20,7 @@
             </div>
             <div class="col-md-10">
                 @Html.EditorFor(model => model.tipoCombustivel)
-                @Html.ValidationMessageFor(model => model.tipoCombustivel)
+                @Html.ValidationMessageFor(model => model.tipoCombustivel, "", new { @class = "text-danger" })
             </div>
         </div>
 
