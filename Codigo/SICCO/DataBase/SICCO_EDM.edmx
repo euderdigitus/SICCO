@@ -41,6 +41,8 @@
           </Key>
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nomeFantasia" Type="varchar" MaxLength="45" />
+          <Property Name="cnpj" Type="varchar" MaxLength="17" />
+          <Property Name="status" Type="varchar" MaxLength="8" />
         </EntityType>
         <EntityType Name="tb_formapagamento">
           <Key>
@@ -729,6 +731,8 @@
           <NavigationProperty Name="tb_pessoa" Relationship="SICCO_Model.fk_TB_Pessoa_TB_Empresa1" FromRole="tb_empresa" ToRole="tb_pessoa" />
           <NavigationProperty Name="tb_usuario" Relationship="SICCO_Model.fk_TB_Usuario_TB_Empresa1" FromRole="tb_empresa" ToRole="tb_usuario" />
           <NavigationProperty Name="tb_veiculo" Relationship="SICCO_Model.fk_TB_Veiculo_TB_Empresa1" FromRole="tb_empresa" ToRole="tb_veiculo" />
+          <Property Name="cnpj" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+          <Property Name="status" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="tb_formapagamento">
           <Key>
@@ -1211,6 +1215,8 @@
           <EntitySetMapping Name="tb_empresa">
             <EntityTypeMapping TypeName="SICCO_Model.tb_empresa">
               <MappingFragment StoreEntitySet="tb_empresa">
+                <ScalarProperty Name="status" ColumnName="status" />
+                <ScalarProperty Name="cnpj" ColumnName="cnpj" />
                 <ScalarProperty Name="nomeFantasia" ColumnName="nomeFantasia" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>

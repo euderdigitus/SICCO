@@ -1,0 +1,55 @@
+﻿@model SICCO.Database.tb_empresa
+
+@{
+    ViewBag.Title = "Detalhes";
+    Layout = "~/Views/Shared/_LayoutADM.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h3>Detalhes</h3>
+    	<hr />
+        <dl class="dl-horizontal">
+            <dt>
+                <div>
+                    <b>Nome Fantasia</b>
+                </div>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.nomeFantasia)
+            </dd>
+            <dt>
+                <div>
+                    <b>Cnpj</b>
+                </div>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.cnpj)
+            </dd>
+            <dt>
+                <div>
+                    <b>Status</b>
+                </div>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.status)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+</body>
+</html>

@@ -24,6 +24,8 @@ namespace SICCO.Database
     
         public int id { get; set; }
         public string nomeFantasia { get; set; }
+        public string cnpj { get; set; }
+        public string status { get; set; }
     
         public virtual ICollection<tb_custo> tb_custo { get; set; }
         public virtual ICollection<tb_pessoa> tb_pessoa { get; set; }

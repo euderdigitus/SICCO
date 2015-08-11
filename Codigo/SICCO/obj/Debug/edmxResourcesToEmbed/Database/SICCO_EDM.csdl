@@ -166,6 +166,8 @@
     <NavigationProperty Name="tb_pessoa" Relationship="SICCO_Model.fk_TB_Pessoa_TB_Empresa1" FromRole="tb_empresa" ToRole="tb_pessoa" />
     <NavigationProperty Name="tb_usuario" Relationship="SICCO_Model.fk_TB_Usuario_TB_Empresa1" FromRole="tb_empresa" ToRole="tb_usuario" />
     <NavigationProperty Name="tb_veiculo" Relationship="SICCO_Model.fk_TB_Veiculo_TB_Empresa1" FromRole="tb_empresa" ToRole="tb_veiculo" />
+    <Property Name="cnpj" Type="String" MaxLength="17" FixedLength="false" Unicode="false" />
+    <Property Name="status" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="tb_formapagamento">
     <Key>

@@ -8,8 +8,14 @@
     
       <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink("Olá " + Session["nome"].ToString(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
+            @try { 
+                @Html.ActionLink("Olá " + Session["nome"].ToString(), "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
+            }
+            catch(NullReferenceException)
+            {
+                Session.Abandon();
+            }
+                </li>
           <li><a href="javascript:document.getElementById('logoutForm').submit()">Sair</a></li>
     </ul>
 }

@@ -1,0 +1,61 @@
+﻿@model IEnumerable<SICCO.Database.tb_empresa>
+
+@{
+    ViewBag.Title = "Concessionária";
+    Layout = "~/Views/Shared/_LayoutADM.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    
+    <table class="table">
+        <tr>
+            <th>
+                <div>
+                    <b>Nome Fantasia</b>
+                </div>
+            </th>
+            <th>
+                <div>
+                    <b>Cnpj</b>
+                </div>
+            </th>
+            <th>
+                <div>
+                    <b>Status</b>
+                </div>
+            </th>
+            <th></th>
+        </tr>
+    
+    @foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.nomeFantasia)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cnpj)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.status)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id=item.id }) |
+                @Html.ActionLink("Detalhes", "Details", new { id=item.id }) |
+                @Html.ActionLink("Remover", "Delete", new { id=item.id })
+            </td>
+        </tr>
+    }
+    
+    </table>
+    <p>
+        @Html.ActionLink("Novo", "Create")
+    </p>
+</body>
+</html>

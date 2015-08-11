@@ -36,6 +36,8 @@
     </Key>
     <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nomeFantasia" Type="varchar" MaxLength="45" />
+    <Property Name="cnpj" Type="varchar" MaxLength="17" />
+    <Property Name="status" Type="varchar" MaxLength="8" />
   </EntityType>
   <EntityType Name="tb_formapagamento">
     <Key>

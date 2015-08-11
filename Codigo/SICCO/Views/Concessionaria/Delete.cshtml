@@ -1,0 +1,67 @@
+﻿@model SICCO.Database.tb_empresa
+
+@{
+    ViewBag.Title = "Remover";
+    Layout = "~/Views/Shared/_LayoutADM.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Delete</title>
+</head>
+<body>
+    <h3>Tem certeza que deseja remover esta Concessionária?</h3>
+    @if (TempData["mensagemErro"] != null)
+    {
+        <div class="alert-danger">
+            @TempData["mensagemErro"]
+        </div>
+    }
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                <div>
+                    <b>Nome Fantasia</b>
+                </div>
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.nomeFantasia)
+            </dd>
+            <dt>
+                <div>
+                    <b>Cnpj</b>
+                </div>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.cnpj)
+            </dd>
+            <dt>
+                <div>
+                    <b>Status</b>
+                </div>
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.status)
+            </dd>
+    
+        </dl>
+    
+        @using (Html.BeginForm()) {
+            @Html.AntiForgeryToken()
+    
+            <div class="form-actions no-color">
+                <input type="submit" value="Remover" class="btn btn-danger" /> |
+                @Html.ActionLink("Voltar", "Index")
+            </div>
+        }
+    </div>
+</body>
+</html>

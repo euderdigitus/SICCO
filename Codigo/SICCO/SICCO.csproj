@@ -167,6 +167,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CombustivelController.cs" />
+    <Compile Include="Controllers\ConcessionariaController.cs" />
     <Compile Include="Controllers\CorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -366,6 +367,11 @@
     <Content Include="Views\Account\Registro.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutADM.cshtml" />
+    <Content Include="Views\Concessionaria\Create.cshtml" />
+    <Content Include="Views\Concessionaria\Delete.cshtml" />
+    <Content Include="Views\Concessionaria\Details.cshtml" />
+    <Content Include="Views\Concessionaria\Edit.cshtml" />
+    <Content Include="Views\Concessionaria\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

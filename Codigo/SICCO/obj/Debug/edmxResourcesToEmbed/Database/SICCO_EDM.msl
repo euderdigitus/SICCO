@@ -45,6 +45,8 @@
     <EntitySetMapping Name="tb_empresa">
       <EntityTypeMapping TypeName="SICCO_Model.tb_empresa">
         <MappingFragment StoreEntitySet="tb_empresa">
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="cnpj" ColumnName="cnpj" />
           <ScalarProperty Name="nomeFantasia" ColumnName="nomeFantasia" />
           <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>

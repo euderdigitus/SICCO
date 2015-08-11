@@ -70,6 +70,8 @@ CREATE TABLE IF NOT EXISTS `tb_custo` (
 CREATE TABLE IF NOT EXISTS `tb_empresa` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `nomeFantasia` varchar(45) DEFAULT NULL,
+  `cnpj` varchar(17) DEFAULT NULL,
+  `status` varchar(8) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
