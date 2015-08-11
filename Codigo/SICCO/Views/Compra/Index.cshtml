@@ -1,0 +1,76 @@
+﻿@model IEnumerable<SICCO.Database.tb_veiculo>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.placa)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.chassi)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.idConcessionaria)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.lote)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_bem.id)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_cor.tipoCor)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_empresa.nomeFantasia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.tb_modelo.categoiaModelo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.placa)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.chassi)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.idConcessionaria)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.lote)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_bem.id)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_cor.tipoCor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_empresa.nomeFantasia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tb_modelo.categoiaModelo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.id })
+        </td>
+    </tr>
+}
+
+</table>

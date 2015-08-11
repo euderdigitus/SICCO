@@ -42,7 +42,7 @@ namespace SICCO.Controllers
             ViewBag.idBem = new SelectList(db.tb_bem, "id", "id");
             ViewBag.idCor = new SelectList(db.tb_cor, "id", "tipoCor");
             ViewBag.idEmpresa = new SelectList(db.tb_empresa, "id", "nomeFantasia");
-            ViewBag.idModelo = new SelectList(db.tb_modelo, "id", "tipoModelo");
+            ViewBag.idModelo = new SelectList(db.tb_modelo, "id", "descricao");
             return View();
         }
 
