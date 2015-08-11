@@ -10,6 +10,7 @@ using SICCO.Database;
 
 namespace SICCO.Controllers
 {
+    [Authorize(Roles ="admin,usuario")]
     public class CompraController : Controller
     {
         private SICCO_Entities db = new SICCO_Entities();

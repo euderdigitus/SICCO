@@ -10,7 +10,7 @@ using SICCO.Database;
 
 namespace SICCO.Controllers
 {
-    [Authorize(Roles = "admin")]
+    [Authorize]
     public class PessoaController : Controller
     {
         private SICCO_Entities db = new SICCO_Entities();
