@@ -54,9 +54,8 @@ namespace SICCO.Models
     public class LoginViewModel
     {
         [Required]
-        [Display(Name = "Email")]
-        [EmailAddress]
-        public string Email { get; set; }
+        [Display(Name = "Login")]
+        public string Login { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
@@ -69,6 +68,16 @@ namespace SICCO.Models
 
     public class RegisterViewModel
     {
+        [Required]
+        [StringLength(10, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 4)]
+        [Display(Name = "Login")]
+        public string Login { get; set; }
+
+        [Required]
+        [StringLength(10, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 3)]
+        [Display(Name = "Nome")]
+        public string Nome { get; set; }
+
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]

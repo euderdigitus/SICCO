@@ -6,7 +6,6 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -17,22 +16,22 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("SICCO Online", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("SICCO ADMINISTRATOR", "Index", "Admin", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Inicio", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Inicio", "Index", "Admin")</li>
                     <li class="dropdown">
                         <a class="dropdown-toggle" data-toggle="dropdown">Cadastro <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
-                            <li>@Html.ActionLink("Cliente", "Index", "Pessoa")</li>
-                            <li>@Html.ActionLink("Funcionário", "Registro", "Account")</li>
-                            <li>@Html.ActionLink("Veículo", "Index", "Veiculo") </li>
-                </ul>
+                            <li>@Html.ActionLink("Concessionária", "Index", "Concessionaria")</li>
+                            <li>@Html.ActionLink("Cor", "Index", "Cor")</li>
+                            <li>@Html.ActionLink("Marca", "Index", "Marca")</li>
+                            <li>@Html.ActionLink("Modelo", "Index", "Modelo")</li>
+                            <li>@Html.ActionLink("Usúario", "Register", "Account")</li>
+                        </ul>
                     </li>
-                    <li>@Html.ActionLink("Negocioacões", "Contact", "Home")</li>
                     <li>@Html.ActionLink("Relatório", "", "")</li>
-                    
 
                 </ul>
                 @Html.Partial("_LoginPartial")
@@ -46,7 +45,6 @@
             <p>&copy  @DateTime.Now.Year  SICCO Online</p>
         </footer>
     </div>
-
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)

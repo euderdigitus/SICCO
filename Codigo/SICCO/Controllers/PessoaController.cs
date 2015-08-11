@@ -10,12 +10,12 @@ using SICCO.Database;
 
 namespace SICCO.Controllers
 {
+    [Authorize(Roles = "admin")]
     public class PessoaController : Controller
     {
         private SICCO_Entities db = new SICCO_Entities();
 
         // GET: Pessoa
-        [Authorize]
         public ActionResult Index()
         {
             var tb_pessoa = db.tb_pessoa.Include(t => t.tb_tipopessoa);
@@ -24,7 +24,6 @@ namespace SICCO.Controllers
 
         // GET: Pessoa/Details/5
 
-        [Authorize]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -48,7 +47,7 @@ namespace SICCO.Controllers
         }
 
         // GET: Pessoa/Create
-        [Authorize]
+        
         public ActionResult Create()
         {
             ViewBag.idEmpresa = new SelectList(db.tb_empresa, "id", "nomeFantasia");
@@ -62,7 +61,6 @@ namespace SICCO.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        [Authorize]
         public ActionResult Create([Bind(Include = "nome,sobreNome,cpfCnpj,rg,email,cidade,estado,cep,fone,celular,sexo,nascimento,endereco,idEmpresa,idTipoPessoa")] tb_pessoa tb_pessoa)
         {
             if (ModelState.IsValid)
@@ -79,7 +77,6 @@ namespace SICCO.Controllers
         }
 
         // GET: Pessoa/Edit/5
-        [Authorize]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -99,7 +96,6 @@ namespace SICCO.Controllers
         // POST: Pessoa/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [Authorize]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "id,nome,sobreNome,cpfCnpj,rg,email,cidade,estado,cep,fone,celular,sexo,nascimento,endereco,idUsuario,idEmpresa,idTipoPessoa")] tb_pessoa tb_pessoa)
@@ -126,7 +122,6 @@ namespace SICCO.Controllers
         }
 
         // GET: Pessoa/Delete/5
-        [Authorize]
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -150,7 +145,6 @@ namespace SICCO.Controllers
         }
 
         // POST: Pessoa/Delete/5
-        [Authorize]
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

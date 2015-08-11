@@ -55,12 +55,12 @@ namespace SICCO.Controllers
         public async Task<ActionResult> Index(ManageMessageId? message)
         {
             ViewBag.StatusMessage =
-                message == ManageMessageId.ChangePasswordSuccess ? "Your password has been changed."
-                : message == ManageMessageId.SetPasswordSuccess ? "Your password has been set."
+                message == ManageMessageId.ChangePasswordSuccess ? "Sua senha foi alterada com sucesso!"
+                : message == ManageMessageId.SetPasswordSuccess ? "Sua senha foi registrada com sucesso!"
                 : message == ManageMessageId.SetTwoFactorSuccess ? "Your two-factor authentication provider has been set."
-                : message == ManageMessageId.Error ? "An error has occurred."
-                : message == ManageMessageId.AddPhoneSuccess ? "Your phone number was added."
-                : message == ManageMessageId.RemovePhoneSuccess ? "Your phone number was removed."
+                : message == ManageMessageId.Error ? "Um erro ocorreu, por favor tente novamente mais tarde!"
+                : message == ManageMessageId.AddPhoneSuccess ? "Seu número de telefone foi adicionado com sucesso!"
+                : message == ManageMessageId.RemovePhoneSuccess ? "Seu número de telefone foi removido com sucesso!"
                 : "";
 
             var userId = User.Identity.GetUserId();

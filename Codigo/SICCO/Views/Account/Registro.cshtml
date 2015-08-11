@@ -1,59 +1,48 @@
 ﻿@model SICCO.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Registro de Usuário";
-    Layout = "~/Views/Shared/_LayoutADM.cshtml";
+    ViewBag.Title = "Registro";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2>Cadastro de Funcionário</h2>
 
-@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+@using (Html.BeginForm("Registro", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
     <hr />
     @Html.ValidationSummary("", new { @class = "text-danger" })
     <div class="form-group">
-        <div class="col-md-2 control-label">
-            <b>Login</b>
-        </div>
+        @Html.LabelFor(m => m.Login, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Login, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        <div class="col-md-2 control-label">
-            <b>Nome</b>
-        </div>
+        @Html.LabelFor(m => m.Nome, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Nome, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        <div class="col-md-2 control-label">
-            <b>E-mail</b>
-        </div>
+        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        <div class="col-md-2 control-label">
-            <b>Senha</b>
-        </div>
+        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
-        <div class="col-md-2 control-label">
-            <b>Confirme Senha</b>
-        </div>
+        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
         <div class="col-md-10">
             @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
         </div>
     </div>
     <div class="form-group">
         <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-success" value="Register" />
+            <input type="submit" class="btn btn-success" value="Cadastrar" />
         </div>
     </div>
 }

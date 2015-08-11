@@ -10,6 +10,7 @@ using SICCO.Database;
 
 namespace SICCO.Controllers
 {
+    [Authorize(Roles = "master")]
     public class ModeloController : Controller
     {
         private SICCO_Entities db = new SICCO_Entities();

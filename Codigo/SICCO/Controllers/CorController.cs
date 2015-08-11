@@ -8,8 +8,10 @@ using System.Web;
 using System.Web.Mvc;
 using SICCO.Database;
 
+
 namespace SICCO.Controllers
 {
+    [Authorize(Roles = "master")]
     public class CorController : Controller
     {
         private SICCO_Entities db = new SICCO_Entities();
