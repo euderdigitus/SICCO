@@ -129,7 +129,7 @@ namespace SICCO.Controllers
             }
             catch (System.Data.Entity.Infrastructure.DbUpdateException)
             {
-                TempData["mensagemErro"] = "Este COMBUSTÍVEL não pode ser removida, pois está sendo utilizada em algum Modelo, altere o COMBUSTÍVEL do Modelo para poder remove-lo!";
+                TempData["mensagemErro"] = "Esta CONCESSIONÁRIA não pode ser removida, pois já possui varios vinculos, deixe-a Inativa!";
                 return RedirectToAction("Delete/" + id);
             }
         }
