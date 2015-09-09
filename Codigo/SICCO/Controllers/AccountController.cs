@@ -139,7 +139,7 @@ namespace SICCO.Controllers
         // GET: /Account/Register
         
   
-        [Authorize (Roles = "master")]
+       // [Authorize (Roles = "master")]
         public ActionResult Register()
         {
             return View();

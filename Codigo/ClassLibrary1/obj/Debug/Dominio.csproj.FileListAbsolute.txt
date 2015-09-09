@@ -1,0 +1,5 @@
+B:\Guilherme\Universidade\Projeto SICCO\SICCO\Codigo\ClassLibrary1\bin\Debug\ClassLibrary1.dll
+B:\Guilherme\Universidade\Projeto SICCO\SICCO\Codigo\ClassLibrary1\bin\Debug\ClassLibrary1.pdb
+B:\Guilherme\Universidade\Projeto SICCO\SICCO\Codigo\ClassLibrary1\obj\Debug\ClassLibrary1.dll
+B:\Guilherme\Universidade\Projeto SICCO\SICCO\Codigo\ClassLibrary1\obj\Debug\ClassLibrary1.pdb
+B:\Guilherme\Universidade\Projeto SICCO\SICCO\Codigo\ClassLibrary1\obj\Debug\Dominio.csprojResolveAssemblyReference.cache
